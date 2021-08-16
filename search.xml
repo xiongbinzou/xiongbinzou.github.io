@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>每日一题-两数之和</title>
+      <link href="/mei-ri-yi-ti-liang-shu-zhi-he/"/>
+      <url>/mei-ri-yi-ti-liang-shu-zhi-he/</url>
+      
+        <content type="html"><![CDATA[<h1 id="两数之和"><a href="#两数之和" class="headerlink" title="两数之和"></a>两数之和</h1><p>给定一个整数数组<code>nums</code>和一个整数目标值<code>target</code>，从该整数数组<code>nums</code>中找出和为目标值<code>target</code>的那两个整数，并返回他们的数组下标。</p><p>假设每种输入只会对应一个答案，数组中同一个元素在答案里不能重复出现，可以按任意顺序返回答案。</p><p>实例1：</p><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">输入: nums = [2,7,11,15], target=9输出: [0, 1] 或 [1, 0]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>实例2：</p><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">输入: nums = [3,2,4], target=6输出: [1, 2] 或 [2, 1]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>暴力解法：复杂度 时间O(n^2)+空间O(1)</p><p>枚举数组中的每一个数<code>x</code>，遍历寻找数组中是否存在<code>target - x</code></p><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>    <span class="token keyword">def</span> <span class="token function">twoSum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">,</span> target<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">:</span>        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>            <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>                <span class="token keyword">if</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> target<span class="token punctuation">:</span>                    <span class="token keyword">return</span> <span class="token punctuation">[</span>i<span class="token punctuation">,</span> j<span class="token punctuation">]</span>        <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>哈希表法：复杂度 时间O(n)+空间O(n)</p><p>哈希表是从算法的角度讲，采用“哈希”这种算法维护的表。“哈希”是将任意长度的数据映射到有限长度的域上，哈希结果称为哈希值，哈希表在index为哈希值的存储单元存储对应的原始数据。把哈希值和原始数据看成一对（key, value），可以看到哈希表实现了字典。</p><p>创建一个哈希表，对于每一个<code>x</code>，首先查询哈希表中是否存在<code>target - x</code>，然后将<code>x</code>插入到哈希表中，即可保证不会让<code>x</code>和自己匹配。</p><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>    <span class="token keyword">def</span> <span class="token function">twoSum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">,</span> target<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">:</span>        hash_table <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token punctuation">)</span>        <span class="token keyword">for</span> i<span class="token punctuation">,</span> num <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>            <span class="token keyword">if</span> target <span class="token operator">-</span> num <span class="token keyword">in</span> hash_table<span class="token punctuation">:</span>                <span class="token keyword">return</span> <span class="token punctuation">[</span>i<span class="token punctuation">,</span> hashtable<span class="token punctuation">[</span>target<span class="token operator">-</span>num<span class="token punctuation">]</span><span class="token punctuation">]</span>            hash_table<span class="token punctuation">[</span>num<span class="token punctuation">]</span> <span class="token operator">=</span> i        <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 面试题目 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> 编程题 </tag>
+            
+            <tag> Go </tag>
+            
+            <tag> C++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
