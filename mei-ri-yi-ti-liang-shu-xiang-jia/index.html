@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="每日一题-两数之和, XiongbinZou">
+    <meta name="keywords" content="每日一题—两数相加, XiongbinZou">
     <meta name="description" content="全栈工程师 | U3D游戏开发 | 像素画画手">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>每日一题-两数之和 | XiongbinZou</title>
+    <title>每日一题—两数相加 | XiongbinZou</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">每日一题-两数之和</h1>
+                    <h1 class="description center-align post-title">每日一题—两数相加</h1>
                 </div>
             </div>
         </div>
@@ -470,7 +470,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-16
+                    2021-08-17
                 </div>
                 
 
@@ -494,40 +494,19 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="两数之和"><a href="#两数之和" class="headerlink" title="两数之和"></a>两数之和</h1><h2 id="1-问题"><a href="#1-问题" class="headerlink" title="1. 问题"></a>1. 问题</h2><p>给定一个整数数组<code>nums</code>和一个整数目标值<code>target</code>，从该整数数组<code>nums</code>中找出和为目标值<code>target</code>的那两个整数，并返回他们的数组下标。</p>
-<p>假设每种输入只会对应一个答案，数组中同一个元素在答案里不能重复出现，可以按任意顺序返回答案。</p>
+                <h1 id="两数相加"><a href="#两数相加" class="headerlink" title="两数相加"></a>两数相加</h1><h2 id="1-问题"><a href="#1-问题" class="headerlink" title="1. 问题"></a>1. 问题</h2><p>给定两个非空的链表，表示两个非负的整数。他们每位数字都是按照逆序的方式存储的，并且每个字节只能存储一位数字。请你将两个数相加，并以相同形式返回一个表示和的联表，假设除了数字0之外，这两个数都不会以0开头。</p>
 <p>实例1：</p>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">输入: nums = [2,7,11,15], target=9
-输出: [0, 1] 或 [1, 0]
-解释：2 + 7 = 9<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">输入: l1 = [2,4,3], l2 = [5,6,4]
+输出: [7,0,8]
+解释: 342 + 465 = 807<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>实例2：</p>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">输入: nums = [3,2,4], target=6
-输出: [1, 2] 或 [2, 1]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">输入: l1 = [0], l2 = [0]
+输出: [0]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h2 id="2-解答"><a href="#2-解答" class="headerlink" title="2. 解答"></a>2. 解答</h2><h3 id="方法一：暴力枚举"><a href="#方法一：暴力枚举" class="headerlink" title="方法一：暴力枚举"></a>方法一：暴力枚举</h3><p>复杂度 时间O(n^2)+空间O(1)</p>
-<p>枚举数组中的每一个数<code>x</code>，遍历寻找数组中是否存在<code>target - x</code></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">twoSum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">,</span> target<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-                <span class="token keyword">if</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> target<span class="token punctuation">:</span>
-                    <span class="token keyword">return</span> <span class="token punctuation">[</span>i<span class="token punctuation">,</span> j<span class="token punctuation">]</span>
-        <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h3 id="方法二：哈希表法"><a href="#方法二：哈希表法" class="headerlink" title="方法二：哈希表法"></a>方法二：哈希表法</h3><p>复杂度 时间O(n)+空间O(n)</p>
-<p>哈希表是从算法的角度讲，采用“哈希”这种算法维护的表。“哈希”是将任意长度的数据映射到有限长度的域上，哈希结果称为哈希值，哈希表在index为哈希值的存储单元存储对应的原始数据。把哈希值和原始数据看成一对（key, value），可以看到哈希表实现了字典。</p>
-<p>创建一个哈希表，对于每一个<code>x</code>，首先查询哈希表中是否存在<code>target - x</code>，然后将<code>x</code>插入到哈希表中，即可保证不会让<code>x</code>和自己匹配。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">twoSum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">,</span> target<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-        hash_table <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token keyword">for</span> i<span class="token punctuation">,</span> num <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> target <span class="token operator">-</span> num <span class="token keyword">in</span> hash_table<span class="token punctuation">:</span>
-                <span class="token keyword">return</span> <span class="token punctuation">[</span>i<span class="token punctuation">,</span> hashtable<span class="token punctuation">[</span>target<span class="token operator">-</span>num<span class="token punctuation">]</span><span class="token punctuation">]</span>
-            hash_table<span class="token punctuation">[</span>num<span class="token punctuation">]</span> <span class="token operator">=</span> i
-        <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-解答"><a href="#2-解答" class="headerlink" title="2. 解答"></a>2. 解答</h2><h3 id="方法：模拟相加"><a href="#方法：模拟相加" class="headerlink" title="方法：模拟相加"></a>方法：模拟相加</h3><p>复杂度 时间O(max(m, n))+空间O(1)</p>
+<p>由于输入的两个链表都是逆序存储数字的位数的，因此两个链表中同一位置的数字可以直接相加，只是需要考虑进位，设置一个标记<code>flag</code>来表示是否需要进位，在链表遍历结束后，如果<code>flag</code>为真，则还需再附加一个节点，节点值为1。</p>
+<pre class="line-numbers language-none"><code class="language-none"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
                 
@@ -555,7 +534,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://xiongbinzou.github.io/mei-ri-yi-ti-liang-shu-zhi-he/">https://xiongbinzou.github.io/mei-ri-yi-ti-liang-shu-zhi-he/</a>
+                    <a href="https://xiongbinzou.github.io/mei-ri-yi-ti-liang-shu-xiang-jia/">https://xiongbinzou.github.io/mei-ri-yi-ti-liang-shu-xiang-jia/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -778,9 +757,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/mei-ri-yi-ti-liang-shu-xiang-jia/">
                     <div class="card-image">
@@ -798,9 +778,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-17
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -813,6 +793,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -840,7 +821,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/mei-ri-yi-ti-liang-shu-zhi-he/">
@@ -874,7 +855,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
