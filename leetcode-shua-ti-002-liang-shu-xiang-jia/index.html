@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="每日一题—两数相加, XiongbinZou">
+    <meta name="keywords" content="LeetCode刷题-002-两数相加, XiongbinZou">
     <meta name="description" content="全栈工程师 | U3D游戏开发 | 像素画画手">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>每日一题—两数相加 | XiongbinZou</title>
+    <title>LeetCode刷题-002-两数相加 | XiongbinZou</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -317,7 +317,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">每日一题—两数相加</h1>
+                    <h1 class="description center-align post-title">LeetCode刷题-002-两数相加</h1>
                 </div>
             </div>
         </div>
@@ -457,8 +457,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AE/" class="post-category">
-                                面试题目
+                            <a href="/categories/LeetCode/" class="post-category">
+                                LeetCode
                             </a>
                         
                     </div>
@@ -506,7 +506,31 @@
 
 <h2 id="2-解答"><a href="#2-解答" class="headerlink" title="2. 解答"></a>2. 解答</h2><h3 id="方法：模拟相加"><a href="#方法：模拟相加" class="headerlink" title="方法：模拟相加"></a>方法：模拟相加</h3><p>复杂度 时间O(max(m, n))+空间O(1)</p>
 <p>由于输入的两个链表都是逆序存储数字的位数的，因此两个链表中同一位置的数字可以直接相加，只是需要考虑进位，设置一个标记<code>flag</code>来表示是否需要进位，在链表遍历结束后，如果<code>flag</code>为真，则还需再附加一个节点，节点值为1。</p>
-<pre class="line-numbers language-none"><code class="language-none"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># Definition for singly-linked list.</span>
+<span class="token keyword">class</span> <span class="token class-name">ListNode</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> val<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token builtin">next</span><span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>val <span class="token operator">=</span> val
+        self<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token operator">=</span> <span class="token builtin">next</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">addTwoNumbers</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> l1<span class="token punctuation">:</span> ListNode<span class="token punctuation">,</span> l2<span class="token punctuation">:</span> ListNode<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> ListNode<span class="token punctuation">:</span>
+        sumHead <span class="token operator">=</span> ListNode<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+        sumNode <span class="token operator">=</span> sumHead
+        flag <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">while</span> flag <span class="token keyword">or</span> l1 <span class="token keyword">or</span> l2<span class="token punctuation">:</span>
+            x <span class="token operator">=</span> l1<span class="token punctuation">.</span>val <span class="token keyword">if</span> l1 <span class="token keyword">else</span> <span class="token number">0</span>
+            y <span class="token operator">=</span> l2<span class="token punctuation">.</span>val <span class="token keyword">if</span> l2 <span class="token keyword">else</span> <span class="token number">0</span>
+            <span class="token builtin">sum</span> <span class="token operator">=</span> x <span class="token operator">+</span> y <span class="token operator">+</span> flag
+            <span class="token keyword">if</span> <span class="token builtin">sum</span> <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">:</span>
+                flag <span class="token operator">=</span> <span class="token number">0</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                <span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token builtin">sum</span> <span class="token operator">-</span> <span class="token number">10</span>
+                flag <span class="token operator">=</span> <span class="token number">1</span>
+            sumNode<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token operator">=</span> ListNode<span class="token punctuation">(</span><span class="token builtin">sum</span><span class="token punctuation">)</span>
+            l1 <span class="token operator">=</span> l1<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token keyword">if</span> l1 <span class="token keyword">else</span> <span class="token boolean">None</span>
+            l2 <span class="token operator">=</span> l2<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token keyword">if</span> l2 <span class="token keyword">else</span> <span class="token boolean">None</span>
+            sumNode <span class="token operator">=</span> sumNode<span class="token punctuation">.</span><span class="token builtin">next</span>
+        <span class="token keyword">return</span> sumHead<span class="token punctuation">.</span><span class="token builtin">next</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 
@@ -534,7 +558,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://xiongbinzou.github.io/mei-ri-yi-ti-liang-shu-xiang-jia/">https://xiongbinzou.github.io/mei-ri-yi-ti-liang-shu-xiang-jia/</a>
+                    <a href="https://xiongbinzou.github.io/leetcode-shua-ti-002-liang-shu-xiang-jia/">https://xiongbinzou.github.io/leetcode-shua-ti-002-liang-shu-xiang-jia/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -757,18 +781,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/mei-ri-yi-ti-liang-shu-xiang-jia/">
+                <a href="/leetcode-shua-ti-003-wu-chong-fu-zi-fu-de-zui-chang-zi-chuan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="每日一题—两数相加">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="LeetCode刷题-003-无重复字符的最长子串">
                         
-                        <span class="card-title">每日一题—两数相加</span>
+                        <span class="card-title">LeetCode刷题-003-无重复字符的最长子串</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -778,22 +801,21 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-17
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-26
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AE/" class="post-category">
-                                    面试题目
+                            <a href="/categories/LeetCode/" class="post-category">
+                                    LeetCode
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -824,13 +846,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/mei-ri-yi-ti-liang-shu-zhi-he/">
+                <a href="/leetcode-shua-ti-001-liang-shu-zhi-he/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="每日一题-两数之和">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="LeetCode刷题-001-两数之和">
                         
-                        <span class="card-title">每日一题-两数之和</span>
+                        <span class="card-title">LeetCode刷题-001-两数之和</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -847,8 +869,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AE/" class="post-category">
-                                    面试题目
+                            <a href="/categories/LeetCode/" class="post-category">
+                                    LeetCode
                                 </a>
                             
                             
