@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="LeetCode刷题-003-无重复字符的最长子串, XiongbinZou">
+    <meta name="keywords" content="LeetCode刷题-0053-最大子序和, XiongbinZou">
     <meta name="description" content="全栈工程师 | U3D游戏开发 | 像素画画手">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>LeetCode刷题-003-无重复字符的最长子串 | XiongbinZou</title>
+    <title>LeetCode刷题-0053-最大子序和 | XiongbinZou</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">LeetCode刷题-003-无重复字符的最长子串</h1>
+                    <h1 class="description center-align post-title">LeetCode刷题-0053-最大子序和</h1>
                 </div>
             </div>
         </div>
@@ -433,20 +433,16 @@
                     
                     <div class="article-tag">
                         
+                            <a href="/tags/%E7%AE%80%E5%8D%95/">
+                                <span class="chip bg-color">简单</span>
+                            </a>
+                        
                             <a href="/tags/%E7%BC%96%E7%A8%8B%E9%A2%98/">
                                 <span class="chip bg-color">编程题</span>
                             </a>
                         
                             <a href="/tags/Python/">
                                 <span class="chip bg-color">Python</span>
-                            </a>
-                        
-                            <a href="/tags/Go/">
-                                <span class="chip bg-color">Go</span>
-                            </a>
-                        
-                            <a href="/tags/C/">
-                                <span class="chip bg-color">C++</span>
                             </a>
                         
                     </div>
@@ -470,7 +466,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-26
+                    2021-09-14
                 </div>
                 
 
@@ -494,34 +490,95 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="无重复字符的最长子串"><a href="#无重复字符的最长子串" class="headerlink" title="无重复字符的最长子串"></a>无重复字符的最长子串</h1><h2 id="1-问题"><a href="#1-问题" class="headerlink" title="1. 问题"></a>1. 问题</h2><p>给定一个字符串<code>s</code>，请你找出其中不含有重复字符的最长子串的长度</p>
-<p>实例1：</p>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">输入：s = "abcabcbb"
-输出：3
-解释：因为无重复字符的最长子串是"abc"，所有其长度为3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+                <h1 id="最大子序和"><a href="#最大子序和" class="headerlink" title="最大子序和"></a>最大子序和</h1><h2 id="1-问题"><a href="#1-问题" class="headerlink" title="1. 问题"></a>1. 问题</h2><p>给定一个整数数组<code>nums</code>，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p>
+<p>示例1：</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">输入: nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+输出: 6
+解释：连续子数组[4, -1, 2, 1]的和最大，为6<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<p>实例2：</p>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">输入：s = "pwwkew"
-输出：3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>示例2：</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">输入: nums = [1]
+输出: 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h2 id="2-解答"><a href="#2-解答" class="headerlink" title="2.解答"></a>2.解答</h2><h3 id="方法：滑动窗口法"><a href="#方法：滑动窗口法" class="headerlink" title="方法：滑动窗口法"></a>方法：滑动窗口法</h3><p>复杂度 时间O(n)+空间O(1)</p>
-<p>其实就是一个队列，当不满足要求是，需要把队列的左边的元素移出，知道满足题目要求，一直维持这样的队列，找出队列出现的最长的长度</p>
+<h2 id="2-解答"><a href="#2-解答" class="headerlink" title="2. 解答"></a>2. 解答</h2><h3 id="方法一：暴力解"><a href="#方法一：暴力解" class="headerlink" title="方法一：暴力解"></a>方法一：暴力解</h3><p>算法复杂度  时间O(N^3) +空间O(1)</p>
+<p>列举所有组合子序列首尾位置的组合，求解最大的子序列和</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">lengthOfLongestSubstring</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> <span class="token keyword">not</span> s<span class="token punctuation">:</span>
-            <span class="token keyword">return</span> <span class="token number">0</span>
-        left<span class="token punctuation">,</span> max_len<span class="token punctuation">,</span> cur_len <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span>
-        lookup <span class="token operator">=</span> <span class="token builtin">set</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            cur_len <span class="token operator">+=</span> <span class="token number">1</span>
-            <span class="token keyword">while</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token keyword">in</span> lookup<span class="token punctuation">:</span>
-                lookup<span class="token punctuation">.</span>remove<span class="token punctuation">(</span>s<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">)</span>
-                left <span class="token operator">+=</span> <span class="token number">1</span>
-                cur_len <span class="token operator">-=</span> <span class="token number">1</span>
-            <span class="token keyword">if</span> cur_len <span class="token operator">&gt;</span> max_len<span class="token punctuation">:</span>
-                max_len <span class="token operator">=</span> cur_len
-            lookup<span class="token punctuation">.</span>add<span class="token punctuation">(</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> max_len<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">def</span> <span class="token function">maxSubArray</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        maxSum <span class="token operator">=</span> nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token number">0</span>
+            <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token builtin">sum</span> <span class="token operator">+=</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+                maxSum <span class="token operator">=</span> <span class="token builtin">max</span><span class="token punctuation">(</span>maxSum<span class="token punctuation">,</span> <span class="token builtin">sum</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> maxSum<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="方法二：优化暴力解"><a href="#方法二：优化暴力解" class="headerlink" title="方法二：优化暴力解"></a>方法二：优化暴力解</h3><p>算法复杂度 时间O(N) + 空间O(1)</p>
+<p>优化暴力解，可以预先处理，得到前缀和。</p>
+<p>定义函数<code>S(i)</code>，表示计算以<code>0</code>开始到<code>i</code>的累和，那么<code>S(j) - s(i-1)</code>表示从<code>i</code>开始到<code>j</code>的累和。因此，只需要遍历一遍计算出所有的<code>S(i)</code>，然后再减去之前的<code>S(k)</code>在的最小值即可。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">maxSubArray</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        maxSum <span class="token operator">=</span> nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        minSum <span class="token operator">=</span> <span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token builtin">sum</span> <span class="token operator">+=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+            maxSum <span class="token operator">=</span> <span class="token builtin">max</span><span class="token punctuation">(</span>maxSum<span class="token punctuation">,</span> <span class="token builtin">sum</span> <span class="token operator">-</span> minSum<span class="token punctuation">)</span>
+            minSum <span class="token operator">=</span> <span class="token builtin">min</span><span class="token punctuation">(</span>minSum<span class="token punctuation">,</span> <span class="token builtin">sum</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> maxSum<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="方法三：分治法"><a href="#方法三：分治法" class="headerlink" title="方法三：分治法"></a>方法三：分治法</h3><p>算法复杂度 时间O(NlogN) + 空间O(logN)</p>
+<p>把数组<code>nums</code>以中间位置<code>m</code>分为左<code>left</code>、右<code>right</code>两部分，那么就有<code>left=nums[0]...nums[m-1]</code>和<code>right=nums[m+1]...nums[n-1]</code></p>
+<p>最大子序列和的位置有以下三种情况：</p>
+<ol>
+<li>考虑中间元素，跨越左右两部分，从中间元素开始，往左求出后缀最大，往右求出前缀足底啊，保持连续性。</li>
+<li>不考虑中间元素，最大子序列和出现在左半部分，递归求解左边部分最大子序列和。</li>
+<li>不考虑中间元素，最大子序列和出现在右半部分，递归求解右边部分最大子序列和</li>
+</ol>
+<p>分别求出上述三种情况的最大子序，三者中最大值即为最大子序和</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> sys
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">maxSubArray</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>helper<span class="token punctuation">(</span>nums<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">def</span> <span class="token function">helper</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">,</span> l<span class="token punctuation">,</span> r<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> l <span class="token operator">&gt;</span> r<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token operator">-</span>sys<span class="token punctuation">.</span>maxsize
+        mid <span class="token operator">=</span> <span class="token punctuation">(</span>l <span class="token operator">+</span> r<span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span>
+        left <span class="token operator">=</span> self<span class="token punctuation">.</span>helper<span class="token punctuation">(</span>nums<span class="token punctuation">,</span> l<span class="token punctuation">,</span> mid <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
+        right <span class="token operator">=</span> self<span class="token punctuation">.</span>helper<span class="token punctuation">(</span>nums<span class="token punctuation">,</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> r<span class="token punctuation">)</span>
+        left_suffix_max_sum <span class="token operator">=</span> right_prefix_max_sum <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">reversed</span><span class="token punctuation">(</span><span class="token builtin">range</span><span class="token punctuation">(</span>l<span class="token punctuation">,</span> mid<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token builtin">sum</span> <span class="token operator">+=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+            left_suffix_max_sum <span class="token operator">=</span> <span class="token builtin">max</span><span class="token punctuation">(</span>left_suffix_max_sum<span class="token punctuation">,</span> <span class="token builtin">sum</span><span class="token punctuation">)</span>
+        <span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>mid<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> r<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token builtin">sum</span> <span class="token operator">+=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+            right_prefix_max_sum <span class="token operator">=</span> <span class="token builtin">max</span><span class="token punctuation">(</span>right_prefix_max_sum<span class="token punctuation">,</span> <span class="token builtin">sum</span><span class="token punctuation">)</span>
+        cross_max_man <span class="token operator">=</span> left_suffix_max_sum <span class="token operator">+</span> right_prefix_max_sum <span class="token operator">+</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span>
+        <span class="token keyword">return</span> <span class="token builtin">max</span><span class="token punctuation">(</span>cross_max_man<span class="token punctuation">,</span> left<span class="token punctuation">,</span> right<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="方法四：动态规划"><a href="#方法四：动态规划" class="headerlink" title="方法四：动态规划"></a>方法四：动态规划</h3><p>动态规划的难点在于找到动态转移方程，<code>dp[i]</code>-表示当前位置<code>i</code>的最大子序和，状态转移方程为<code>dp[i]=max(dp[i-1] + nums[i], nums[i])</code>，初始化<code>dp[0] = nums[0]</code>，从状态转移方程中，只需要关注一个状态的值，不需要开一个数组记录位置所有子序列和，只需要两个变量<code>curMaxSum</code> - 累计最大和到当前位置，<code>maxSum</code> - 全局最大子序和</p>
+<p><code>currMaxSum = max(currMaxSum + nums[i], nums[i])</code></p>
+<p><code>maxSum = max(currMaxSum, maxSum)</code></p>
+<p>算法复杂度 时间O(N) + 空间O(1)</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">maxSubArray</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+        max_sum <span class="token operator">=</span> curr_max_sum <span class="token operator">=</span> nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            curr_max_sum <span class="token operator">=</span> <span class="token builtin">max</span><span class="token punctuation">(</span>curr_max_sum <span class="token operator">+</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            max_sum <span class="token operator">=</span> <span class="token builtin">max</span><span class="token punctuation">(</span>curr_max_sum<span class="token punctuation">,</span> max_sum<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> max_sum<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -548,7 +605,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://xiongbinzou.github.io/leetcode-shua-ti-003-wu-chong-fu-zi-fu-de-zui-chang-zi-chuan/">https://xiongbinzou.github.io/leetcode-shua-ti-003-wu-chong-fu-zi-fu-de-zui-chang-zi-chuan/</a>
+                    <a href="https://xiongbinzou.github.io/leetcode-shua-ti-0053-zui-da-zi-xu-he/">https://xiongbinzou.github.io/leetcode-shua-ti-0053-zui-da-zi-xu-he/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -586,20 +643,16 @@
                     
                         <div class="article-tag">
                             
+                                <a href="/tags/%E7%AE%80%E5%8D%95/">
+                                    <span class="chip bg-color">简单</span>
+                                </a>
+                            
                                 <a href="/tags/%E7%BC%96%E7%A8%8B%E9%A2%98/">
                                     <span class="chip bg-color">编程题</span>
                                 </a>
                             
                                 <a href="/tags/Python/">
                                     <span class="chip bg-color">Python</span>
-                                </a>
-                            
-                                <a href="/tags/Go/">
-                                    <span class="chip bg-color">Go</span>
-                                </a>
-                            
-                                <a href="/tags/C/">
-                                    <span class="chip bg-color">C++</span>
                                 </a>
                             
                         </div>
@@ -771,18 +824,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/leetcode-shua-ti-003-wu-chong-fu-zi-fu-de-zui-chang-zi-chuan/">
+                <a href="/leetcode-shua-ti-0026-shan-chu-you-xu-shu-zu-zhong-de-chong-fu-xiang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="LeetCode刷题-003-无重复字符的最长子串">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="LeetCode刷题-0026-删除有序数组中的重复项">
                         
-                        <span class="card-title">LeetCode刷题-003-无重复字符的最长子串</span>
+                        <span class="card-title">LeetCode刷题-0026-删除有序数组中的重复项</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -792,9 +844,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-26
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-14
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -807,9 +859,12 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%AE%80%E5%8D%95/">
+                        <span class="chip bg-color">简单</span>
+                    </a>
                     
                     <a href="/tags/%E7%BC%96%E7%A8%8B%E9%A2%98/">
                         <span class="chip bg-color">编程题</span>
@@ -817,14 +872,6 @@
                     
                     <a href="/tags/Python/">
                         <span class="chip bg-color">Python</span>
-                    </a>
-                    
-                    <a href="/tags/Go/">
-                        <span class="chip bg-color">Go</span>
-                    </a>
-                    
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C++</span>
                     </a>
                     
                 </div>
@@ -838,13 +885,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/leetcode-shua-ti-002-liang-shu-xiang-jia/">
+                <a href="/leetcode-shua-ti-0066-jia-yi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="LeetCode刷题-002-两数相加">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="LeetCode刷题-0066-加一">
                         
-                        <span class="card-title">LeetCode刷题-002-两数相加</span>
+                        <span class="card-title">LeetCode刷题-0066-加一</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -855,7 +902,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-17
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-14
                             </span>
                         <span class="publish-author">
                             
@@ -872,20 +919,16 @@
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/%E7%AE%80%E5%8D%95/">
+                        <span class="chip bg-color">简单</span>
+                    </a>
+                    
                     <a href="/tags/%E7%BC%96%E7%A8%8B%E9%A2%98/">
                         <span class="chip bg-color">编程题</span>
                     </a>
                     
                     <a href="/tags/Python/">
                         <span class="chip bg-color">Python</span>
-                    </a>
-                    
-                    <a href="/tags/Go/">
-                        <span class="chip bg-color">Go</span>
-                    </a>
-                    
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C++</span>
                     </a>
                     
                 </div>
@@ -1346,5 +1389,8 @@ $(function () {
     
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":180},"mobile":{"show":true},"react":{"opacity":1}});</script></body>
+
+</html>
+ow":true},"react":{"opacity":1}});</script></body>
 
 </html>

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="LeetCode刷题-001-两数之和, XiongbinZou">
+    <meta name="keywords" content="LeetCode刷题-0169-多数元素, XiongbinZou">
     <meta name="description" content="全栈工程师 | U3D游戏开发 | 像素画画手">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>LeetCode刷题-001-两数之和 | XiongbinZou</title>
+    <title>LeetCode刷题-0169-多数元素 | XiongbinZou</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">LeetCode刷题-001-两数之和</h1>
+                    <h1 class="description center-align post-title">LeetCode刷题-0169-多数元素</h1>
                 </div>
             </div>
         </div>
@@ -433,20 +433,16 @@
                     
                     <div class="article-tag">
                         
+                            <a href="/tags/%E7%AE%80%E5%8D%95/">
+                                <span class="chip bg-color">简单</span>
+                            </a>
+                        
                             <a href="/tags/%E7%BC%96%E7%A8%8B%E9%A2%98/">
                                 <span class="chip bg-color">编程题</span>
                             </a>
                         
                             <a href="/tags/Python/">
                                 <span class="chip bg-color">Python</span>
-                            </a>
-                        
-                            <a href="/tags/Go/">
-                                <span class="chip bg-color">Go</span>
-                            </a>
-                        
-                            <a href="/tags/C/">
-                                <span class="chip bg-color">C++</span>
                             </a>
                         
                     </div>
@@ -470,7 +466,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-16
+                    2021-09-14
                 </div>
                 
 
@@ -494,40 +490,28 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="两数之和"><a href="#两数之和" class="headerlink" title="两数之和"></a>两数之和</h1><h2 id="1-问题"><a href="#1-问题" class="headerlink" title="1. 问题"></a>1. 问题</h2><p>给定一个整数数组<code>nums</code>和一个整数目标值<code>target</code>，从该整数数组<code>nums</code>中找出和为目标值<code>target</code>的那两个整数，并返回他们的数组下标。</p>
-<p>假设每种输入只会对应一个答案，数组中同一个元素在答案里不能重复出现，可以按任意顺序返回答案。</p>
-<p>实例1：</p>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">输入: nums = [2,7,11,15], target=9
-输出: [0, 1] 或 [1, 0]
-解释：2 + 7 = 9<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+                <h1 id="多数元素"><a href="#多数元素" class="headerlink" title="多数元素"></a>多数元素</h1><h2 id="1-问题"><a href="#1-问题" class="headerlink" title="1. 问题"></a>1. 问题</h2><p>给定一个大小为<code>n</code>的数组，找到其中的多数元素。多数元素指在数组中出现次数大于<code>[n/2]</code>的元素</p>
+<p>假设数组是非空的，并且给定的数组总是存在多数元素。</p>
+<p>示例1：</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">输入: [3,2,3]
+输出: 3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<p>实例2：</p>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">输入: nums = [3,2,4], target=6
-输出: [1, 2] 或 [2, 1]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>示例2：</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">输入: [2,2,1,1,1,2,2]
+输出: 2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h2 id="2-解答"><a href="#2-解答" class="headerlink" title="2. 解答"></a>2. 解答</h2><h3 id="方法一：暴力枚举"><a href="#方法一：暴力枚举" class="headerlink" title="方法一：暴力枚举"></a>方法一：暴力枚举</h3><p>复杂度 时间O(n^2)+空间O(1)</p>
-<p>枚举数组中的每一个数<code>x</code>，遍历寻找数组中是否存在<code>target - x</code></p>
+<h2 id="2-解答"><a href="#2-解答" class="headerlink" title="2. 解答"></a>2. 解答</h2><h3 id="投票算法"><a href="#投票算法" class="headerlink" title="投票算法"></a>投票算法</h3><p>复杂度 时间O(N)+空间O(1)</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">twoSum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">,</span> target<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-                <span class="token keyword">if</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> target<span class="token punctuation">:</span>
-                    <span class="token keyword">return</span> <span class="token punctuation">[</span>i<span class="token punctuation">,</span> j<span class="token punctuation">]</span>
-        <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h3 id="方法二：哈希表法"><a href="#方法二：哈希表法" class="headerlink" title="方法二：哈希表法"></a>方法二：哈希表法</h3><p>复杂度 时间O(n)+空间O(n)</p>
-<p>哈希表是从算法的角度讲，采用“哈希”这种算法维护的表。“哈希”是将任意长度的数据映射到有限长度的域上，哈希结果称为哈希值，哈希表在index为哈希值的存储单元存储对应的原始数据。把哈希值和原始数据看成一对（key, value），可以看到哈希表实现了字典。</p>
-<p>创建一个哈希表，对于每一个<code>x</code>，首先查询哈希表中是否存在<code>target - x</code>，然后将<code>x</code>插入到哈希表中，即可保证不会让<code>x</code>和自己匹配。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">twoSum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">,</span> target<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-        hash_table <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token keyword">for</span> i<span class="token punctuation">,</span> num <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> target <span class="token operator">-</span> num <span class="token keyword">in</span> hash_table<span class="token punctuation">:</span>
-                <span class="token keyword">return</span> <span class="token punctuation">[</span>i<span class="token punctuation">,</span> hashtable<span class="token punctuation">[</span>target<span class="token operator">-</span>num<span class="token punctuation">]</span><span class="token punctuation">]</span>
-            hash_table<span class="token punctuation">[</span>num<span class="token punctuation">]</span> <span class="token operator">=</span> i
-        <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">def</span> <span class="token function">twoSum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+        count<span class="token punctuation">,</span> major <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> num <span class="token keyword">in</span> nums<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> count <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+                major <span class="token operator">=</span> num
+            <span class="token keyword">if</span> num <span class="token operator">==</span> major<span class="token punctuation">:</span>
+                count <span class="token operator">+=</span> <span class="token number">1</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                count <span class="token operator">-=</span> <span class="token number">1</span>
+        <span class="token keyword">return</span> major<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 
@@ -555,7 +539,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://xiongbinzou.github.io/leetcode-shua-ti-001-liang-shu-zhi-he/">https://xiongbinzou.github.io/leetcode-shua-ti-001-liang-shu-zhi-he/</a>
+                    <a href="https://xiongbinzou.github.io/leetcode-shua-ti-0169-duo-shu-yuan-su/">https://xiongbinzou.github.io/leetcode-shua-ti-0169-duo-shu-yuan-su/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -593,20 +577,16 @@
                     
                         <div class="article-tag">
                             
+                                <a href="/tags/%E7%AE%80%E5%8D%95/">
+                                    <span class="chip bg-color">简单</span>
+                                </a>
+                            
                                 <a href="/tags/%E7%BC%96%E7%A8%8B%E9%A2%98/">
                                     <span class="chip bg-color">编程题</span>
                                 </a>
                             
                                 <a href="/tags/Python/">
                                     <span class="chip bg-color">Python</span>
-                                </a>
-                            
-                                <a href="/tags/Go/">
-                                    <span class="chip bg-color">Go</span>
-                                </a>
-                            
-                                <a href="/tags/C/">
-                                    <span class="chip bg-color">C++</span>
                                 </a>
                             
                         </div>
@@ -782,13 +762,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/leetcode-shua-ti-002-liang-shu-xiang-jia/">
+                <a href="/leetcode-shua-ti-0160-xiang-jiao-lian-biao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="LeetCode刷题-002-两数相加">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="LeetCode刷题-0160-相交链表">
                         
-                        <span class="card-title">LeetCode刷题-002-两数相加</span>
+                        <span class="card-title">LeetCode刷题-0160-相交链表</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -799,7 +779,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-17
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-14
                         </span>
                         <span class="publish-author">
                             
@@ -816,20 +796,16 @@
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/%E7%AE%80%E5%8D%95/">
+                        <span class="chip bg-color">简单</span>
+                    </a>
+                    
                     <a href="/tags/%E7%BC%96%E7%A8%8B%E9%A2%98/">
                         <span class="chip bg-color">编程题</span>
                     </a>
                     
                     <a href="/tags/Python/">
                         <span class="chip bg-color">Python</span>
-                    </a>
-                    
-                    <a href="/tags/Go/">
-                        <span class="chip bg-color">Go</span>
-                    </a>
-                    
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C++</span>
                     </a>
                     
                 </div>
@@ -843,13 +819,13 @@
                 本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/leetcode-shua-ti-001-liang-shu-zhi-he/">
+                <a href="/leetcode-shua-ti-0169-duo-shu-yuan-su/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="LeetCode刷题-001-两数之和">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="LeetCode刷题-0169-多数元素">
                         
-                        <span class="card-title">LeetCode刷题-001-两数之和</span>
+                        <span class="card-title">LeetCode刷题-0169-多数元素</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -860,7 +836,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-14
                             </span>
                         <span class="publish-author">
                             
@@ -878,20 +854,16 @@
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/%E7%AE%80%E5%8D%95/">
+                        <span class="chip bg-color">简单</span>
+                    </a>
+                    
                     <a href="/tags/%E7%BC%96%E7%A8%8B%E9%A2%98/">
                         <span class="chip bg-color">编程题</span>
                     </a>
                     
                     <a href="/tags/Python/">
                         <span class="chip bg-color">Python</span>
-                    </a>
-                    
-                    <a href="/tags/Go/">
-                        <span class="chip bg-color">Go</span>
-                    </a>
-                    
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C++</span>
                     </a>
                     
                 </div>
