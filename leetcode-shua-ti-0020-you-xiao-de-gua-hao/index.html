@@ -445,6 +445,10 @@
                                 <span class="chip bg-color">Python</span>
                             </a>
                         
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C#</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -466,7 +470,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-09-14
+                    2021-10-16
                 </div>
                 
 
@@ -490,7 +494,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="有效的括号"><a href="#有效的括号" class="headerlink" title="有效的括号"></a>有效的括号</h1><h2 id="1-问题"><a href="#1-问题" class="headerlink" title="1. 问题"></a>1. 问题</h2><p>给定一个只包括<code>(</code>，<code>)</code>，<code>{</code>，<code>}</code>，<code>[</code>，<code>]</code>的字符串<code>s</code>，判断字符串是否有效。注意空字符串可被认为是有效字符串。</p>
+                <h1 id="有效的括号"><a href="#有效的括号" class="headerlink" title="有效的括号"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/valid-parentheses/">有效的括号</a></h1><h2 id="1-问题"><a href="#1-问题" class="headerlink" title="1. 问题"></a>1. 问题</h2><p>给定一个只包括<code>(</code>，<code>)</code>，<code>{</code>，<code>}</code>，<code>[</code>，<code>]</code>的字符串<code>s</code>，判断字符串是否有效。注意空字符串可被认为是有效字符串。</p>
 <p>有效字符串需满足：</p>
 <ol>
 <li>左括号必须用相同类型的右括号闭合。</li>
@@ -514,16 +518,42 @@
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">isValid</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">bool</span><span class="token punctuation">:</span>
         stack <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-        <span class="token builtin">map</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"{"</span><span class="token punctuation">:</span> <span class="token string">"}"</span><span class="token punctuation">,</span> <span class="token string">"["</span><span class="token punctuation">:</span> <span class="token string">"]"</span><span class="token punctuation">,</span> <span class="token string">"("</span><span class="token punctuation">:</span> <span class="token string">")"</span><span class="token punctuation">}</span>
+        _map <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"{"</span><span class="token punctuation">:</span> <span class="token string">"}"</span><span class="token punctuation">,</span> <span class="token string">"["</span><span class="token punctuation">:</span> <span class="token string">"]"</span><span class="token punctuation">,</span> <span class="token string">"("</span><span class="token punctuation">:</span> <span class="token string">")"</span><span class="token punctuation">}</span>
         <span class="token keyword">for</span> x <span class="token keyword">in</span> s<span class="token punctuation">:</span>
-            <span class="token keyword">if</span> x <span class="token keyword">in</span> <span class="token builtin">map</span><span class="token punctuation">:</span>
-                stack<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token builtin">map</span><span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> x <span class="token keyword">in</span> _map<span class="token punctuation">:</span>
+                stack<span class="token punctuation">.</span>append<span class="token punctuation">(</span>_map<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">)</span>
             <span class="token keyword">else</span><span class="token punctuation">:</span>
                 <span class="token keyword">if</span> <span class="token keyword">not</span> stack<span class="token punctuation">:</span>
                     <span class="token keyword">return</span> <span class="token boolean">False</span>
                 <span class="token keyword">if</span> x <span class="token operator">!=</span> stack<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
                     <span class="token keyword">return</span> <span class="token boolean">False</span>
         <span class="token keyword">return</span> <span class="token boolean">True</span> <span class="token keyword">if</span> <span class="token keyword">not</span> stack <span class="token keyword">else</span> <span class="token boolean">False</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">public class Solution {
+    public bool IsValid(string s) {
+        Stack&lt;char&gt; con = new Stack&lt;char&gt;();
+        for (int i = 0; i &lt; s.Length; i++) {
+            if (s[i] == '(' || s[i] == '[' || s[i] == '{') {
+                con.Push(s[i]);
+            } else {
+                if (con.Count &lt;= 0) {
+                    return False;
+                }
+                var tmp = con.Pop();
+                bool ok = false;
+                if (s[i] == ']' &amp;&amp; temp == '['
+                  || s[i] == ')' &amp;&amp; temp == '('
+                  || s[i] == '}' &amp;&amp; temp == '{'){
+                    ok = true;
+                }
+                if (!ok) {
+                    return false;
+                }
+            }
+        }
+        return con.Count == 0;
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -532,7 +562,7 @@
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">isValid</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">bool</span><span class="token punctuation">:</span>
         <span class="token keyword">while</span> <span class="token string">'[]'</span> <span class="token keyword">in</span> s <span class="token keyword">or</span> <span class="token string">'()'</span> <span class="token keyword">in</span> s <span class="token keyword">or</span> <span class="token string">'{}'</span> <span class="token keyword">in</span> s<span class="token punctuation">:</span>
-            s <span class="token operator">=</span> s<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'[]'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'()'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+            s <span class="token operator">=</span> s<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'[]'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'()'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'{}'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
         <span class="token keyword">return</span> <span class="token keyword">not</span> <span class="token builtin">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
@@ -609,6 +639,10 @@
                             
                                 <a href="/tags/Python/">
                                     <span class="chip bg-color">Python</span>
+                                </a>
+                            
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C#</span>
                                 </a>
                             
                         </div>
@@ -784,13 +818,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/leetcode-shua-ti-0001-liang-shu-zhi-he/">
+                <a href="/leetcode-shua-ti-0021-he-bing-liang-ge-you-xu-lian-biao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="LeetCode刷题-001-两数之和①">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="LeetCode刷题-0021-合并两个有序链表">
                         
-                        <span class="card-title">LeetCode刷题-001-两数之和①</span>
+                        <span class="card-title">LeetCode刷题-0021-合并两个有序链表</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -801,7 +835,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-14
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-16
                         </span>
                         <span class="publish-author">
                             
@@ -830,6 +864,10 @@
                         <span class="chip bg-color">Python</span>
                     </a>
                     
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C#</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -841,13 +879,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/leetcode-shua-ti-0021-he-bing-liang-ge-you-xu-lian-biao/">
+                <a href="/leetcode-shua-ti-0001-liang-shu-zhi-he/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="LeetCode刷题-0021-合并两个有序链表">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="LeetCode刷题-001-两数之和①">
                         
-                        <span class="card-title">LeetCode刷题-0021-合并两个有序链表</span>
+                        <span class="card-title">LeetCode刷题-001-两数之和①</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -858,7 +896,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-15
                             </span>
                         <span class="publish-author">
                             
@@ -1117,7 +1155,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021</span>
+                <span id="year">2021-2022</span>
             
             <span id="year">2021</span>
             <a href="/about" target="_blank">XiongbinZou</a>
@@ -1345,8 +1383,5 @@ $(function () {
     
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":180},"mobile":{"show":true},"react":{"opacity":1}});</script></body>
-
-</html>
-ile":{"show":true},"react":{"opacity":1}});</script></body>
 
 </html>
