@@ -20,11 +20,11 @@
       
         <tags>
             
-            <tag> C#基础 </tag>
-            
             <tag> 学习笔记 </tag>
             
             <tag> Unity开发基础 </tag>
+            
+            <tag> C#基础 </tag>
             
         </tags>
       
@@ -37,7 +37,7 @@
       <link href="/python-xu-ni-huan-jing-de-shi-yong/"/>
       <url>/python-xu-ni-huan-jing-de-shi-yong/</url>
       
-        <content type="html"><![CDATA[<h1 id="Python虚拟环境的使用"><a href="#Python虚拟环境的使用" class="headerlink" title="Python虚拟环境的使用"></a>Python虚拟环境的使用</h1><p>python虚拟环境的主要目的是为Python项目创建一个隔离的环境，意味着每个环境都可以拥有自己的依赖项</p><h2 id="1-安装virtualenv"><a href="#1-安装virtualenv" class="headerlink" title="1.安装virtualenv"></a>1.安装virtualenv</h2><p><code>pip install virtualenv</code></p><h2 id="2-创建虚拟环境并指定Python版本"><a href="#2-创建虚拟环境并指定Python版本" class="headerlink" title="2.创建虚拟环境并指定Python版本"></a>2.创建虚拟环境并指定Python版本</h2><p><code>virtualenv venv --python=python3.8</code></p><h2 id="3-进入虚拟环境"><a href="#3-进入虚拟环境" class="headerlink" title="3.进入虚拟环境"></a>3.进入虚拟环境</h2><p><code>source bin/active</code></p><h2 id="4-退出虚拟环境"><a href="#4-退出虚拟环境" class="headerlink" title="4.退出虚拟环境"></a>4.退出虚拟环境</h2><p><code>deactive</code></p><h2 id="5-删除虚拟环境"><a href="#5-删除虚拟环境" class="headerlink" title="5.删除虚拟环境"></a>5.删除虚拟环境</h2><p><code>rm -r venv</code></p><h2 id="6-生成requirements-txt文件"><a href="#6-生成requirements-txt文件" class="headerlink" title="6.生成requirements.txt文件"></a>6.生成requirements.txt文件</h2><h3 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h3><p><code>pip freeze &gt; requirements.txt</code></p><h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二:"></a>方法二:</h3><p><code>pip install pipreqs</code></p><p><code>pipreqs ./ --encoding=utf-8 --force</code></p><h2 id="7-使用requirements-txt文件"><a href="#7-使用requirements-txt文件" class="headerlink" title="7.使用requirements.txt文件"></a>7.使用requirements.txt文件</h2><p><code>pip install -r requirements.txt</code></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="Python虚拟环境的使用"><a href="#Python虚拟环境的使用" class="headerlink" title="Python虚拟环境的使用"></a>Python虚拟环境的使用</h1><p>python虚拟环境的主要目的是为Python项目创建一个隔离的环境，意味着每个环境都可以拥有自己的依赖项</p><h2 id="1-安装virtualenv"><a href="#1-安装virtualenv" class="headerlink" title="1.安装virtualenv"></a>1.安装virtualenv</h2><p><code>pip install virtualenv</code></p><h2 id="2-创建虚拟环境并指定Python版本"><a href="#2-创建虚拟环境并指定Python版本" class="headerlink" title="2.创建虚拟环境并指定Python版本"></a>2.创建虚拟环境并指定Python版本</h2><p><code>virtualenv venv --python=python3.8</code></p><h2 id="3-进入虚拟环境"><a href="#3-进入虚拟环境" class="headerlink" title="3.进入虚拟环境"></a>3.进入虚拟环境</h2><p><code>source bin/active</code></p><h2 id="4-退出虚拟环境"><a href="#4-退出虚拟环境" class="headerlink" title="4.退出虚拟环境"></a>4.退出虚拟环境</h2><p><code>deactive</code></p><h2 id="5-删除虚拟环境"><a href="#5-删除虚拟环境" class="headerlink" title="5.删除虚拟环境"></a>5.删除虚拟环境</h2><p><code>rm -r venv</code></p><h2 id="6-生成requirements-txt文件"><a href="#6-生成requirements-txt文件" class="headerlink" title="6.生成requirements.txt文件"></a>6.生成requirements.txt文件</h2><p><strong>方法一:</strong></p><p><code>pip freeze &gt; requirements.txt</code></p><p><strong>方法二:</strong></p><p><code>pip install pipreqs</code></p><p><code>pipreqs ./ --encoding=utf-8 --force</code></p><h2 id="7-使用requirements-txt文件"><a href="#7-使用requirements-txt文件" class="headerlink" title="7.使用requirements.txt文件"></a>7.使用requirements.txt文件</h2><p><code>pip install -r requirements.txt</code></p>]]></content>
       
       
       <categories>
@@ -78,11 +78,11 @@
       
         <tags>
             
+            <tag> Lua基础 </tag>
+            
             <tag> 学习笔记 </tag>
             
             <tag> Unity开发基础 </tag>
-            
-            <tag> Lua基础 </tag>
             
         </tags>
       
