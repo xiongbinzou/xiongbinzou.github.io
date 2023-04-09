@@ -1,1 +1,188 @@
-"use strict";function _typeof30(t){return(_typeof30="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t})(t)}function _typeof29(t){return(_typeof29="function"==typeof Symbol&&"symbol"==_typeof30(Symbol.iterator)?function(t){return _typeof30(t)}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":_typeof30(t)})(t)}function _typeof28(t){return(_typeof28="function"==typeof Symbol&&"symbol"==_typeof29(Symbol.iterator)?function(t){return _typeof29(t)}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":_typeof29(t)})(t)}function _typeof27(t){return(_typeof27="function"==typeof Symbol&&"symbol"==_typeof28(Symbol.iterator)?function(t){return _typeof28(t)}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":_typeof28(t)})(t)}function _typeof26(t){return(_typeof26="function"==typeof Symbol&&"symbol"==_typeof27(Symbol.iterator)?function(t){return _typeof27(t)}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":_typeof27(t)})(t)}function _typeof25(t){return(_typeof25="function"==typeof Symbol&&"symbol"==_typeof26(Symbol.iterator)?function(t){return _typeof26(t)}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":_typeof26(t)})(t)}function _typeof24(t){return(_typeof24="function"==typeof Symbol&&"symbol"==_typeof25(Symbol.iterator)?function(t){return _typeof25(t)}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":_typeof25(t)})(t)}function _typeof23(t){return(_typeof23="function"==typeof Symbol&&"symbol"==_typeof24(Symbol.iterator)?function(t){return _typeof24(t)}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":_typeof24(t)})(t)}function _typeof22(t){return(_typeof22="function"==typeof Symbol&&"symbol"==_typeof23(Symbol.iterator)?function(t){return _typeof23(t)}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":_typeof23(t)})(t)}function _typeof21(t){return(_typeof21="function"==typeof Symbol&&"symbol"==_typeof22(Symbol.iterator)?function(t){return _typeof22(t)}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":_typeof22(t)})(t)}function _typeof20(t){return(_typeof20="function"==typeof Symbol&&"symbol"==_typeof21(Symbol.iterator)?function(t){return _typeof21(t)}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":_typeof21(t)})(t)}function _typeof19(t){return(_typeof19="function"==typeof Symbol&&"symbol"==_typeof20(Symbol.iterator)?function(t){return _typeof20(t)}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":_typeof20(t)})(t)}function _typeof18(t){return(_typeof18="function"==typeof Symbol&&"symbol"==_typeof19(Symbol.iterator)?function(t){return _typeof19(t)}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":_typeof19(t)})(t)}function _typeof17(t){return(_typeof17="function"==typeof Symbol&&"symbol"==_typeof18(Symbol.iterator)?function(t){return _typeof18(t)}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":_typeof18(t)})(t)}function _typeof16(t){return(_typeof16="function"==typeof Symbol&&"symbol"==_typeof17(Symbol.iterator)?function(t){return _typeof17(t)}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":_typeof17(t)})(t)}function _typeof15(t){return(_typeof15="function"==typeof Symbol&&"symbol"==_typeof16(Symbol.iterator)?function(t){return _typeof16(t)}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":_typeof16(t)})(t)}function _typeof14(t){return(_typeof14="function"==typeof Symbol&&"symbol"==_typeof15(Symbol.iterator)?function(t){return _typeof15(t)}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":_typeof15(t)})(t)}function _typeof13(t){return(_typeof13="function"==typeof Symbol&&"symbol"==_typeof14(Symbol.iterator)?function(t){return _typeof14(t)}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":_typeof14(t)})(t)}function _typeof12(t){return(_typeof12="function"==typeof Symbol&&"symbol"==_typeof13(Symbol.iterator)?function(t){return _typeof13(t)}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":_typeof13(t)})(t)}function _typeof11(t){return(_typeof11="function"==typeof Symbol&&"symbol"==_typeof12(Symbol.iterator)?function(t){return _typeof12(t)}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":_typeof12(t)})(t)}function _typeof10(t){return(_typeof10="function"==typeof Symbol&&"symbol"==_typeof11(Symbol.iterator)?function(t){return _typeof11(t)}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":_typeof11(t)})(t)}function _typeof9(t){return(_typeof9="function"==typeof Symbol&&"symbol"==_typeof10(Symbol.iterator)?function(t){return _typeof10(t)}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":_typeof10(t)})(t)}function _typeof8(t){return(_typeof8="function"==typeof Symbol&&"symbol"==_typeof9(Symbol.iterator)?function(t){return _typeof9(t)}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":_typeof9(t)})(t)}function _typeof7(t){return(_typeof7="function"==typeof Symbol&&"symbol"==_typeof8(Symbol.iterator)?function(t){return _typeof8(t)}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":_typeof8(t)})(t)}function _typeof6(t){return(_typeof6="function"==typeof Symbol&&"symbol"==_typeof7(Symbol.iterator)?function(t){return _typeof7(t)}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":_typeof7(t)})(t)}function _typeof5(t){return(_typeof5="function"==typeof Symbol&&"symbol"==_typeof6(Symbol.iterator)?function(t){return _typeof6(t)}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":_typeof6(t)})(t)}function _typeof4(t){return(_typeof4="function"==typeof Symbol&&"symbol"==_typeof5(Symbol.iterator)?function(t){return _typeof5(t)}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":_typeof5(t)})(t)}function _typeof3(t){return(_typeof3="function"==typeof Symbol&&"symbol"==_typeof4(Symbol.iterator)?function(t){return _typeof4(t)}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":_typeof4(t)})(t)}function _typeof2(t){return(_typeof2="function"==typeof Symbol&&"symbol"==_typeof3(Symbol.iterator)?function(t){return _typeof3(t)}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":_typeof3(t)})(t)}function _typeof(t){return(_typeof="function"==typeof Symbol&&"symbol"==_typeof2(Symbol.iterator)?function(t){return _typeof2(t)}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":_typeof2(t)})(t)}function _regeneratorRuntime(){_regeneratorRuntime=function(){return i};var i={},t=Object.prototype,f=t.hasOwnProperty,o="function"==typeof Symbol?Symbol:{},n=o.iterator||"@@iterator",e=o.asyncIterator||"@@asyncIterator",r=o.toStringTag||"@@toStringTag";function y(t,o,e){return Object.defineProperty(t,o,{value:e,enumerable:!0,configurable:!0,writable:!0}),t[o]}try{y({},"")}catch(t){y=function(t,o,e){return t[o]=e}}function u(t,o,e,n){var r,y,i,u,o=o&&o.prototype instanceof a?o:a,o=Object.create(o.prototype),n=new v(n||[]);return o._invoke=(r=t,y=e,i=n,u="suspendedStart",function(t,o){if("executing"===u)throw new Error("Generator is already running");if("completed"===u){if("throw"===t)throw o;return w()}for(i.method=t,i.arg=o;;){var e=i.delegate;if(e=e&&function t(o,e){var n=o.iterator[e.method];if(void 0!==n)return"throw"===(n=c(n,o.iterator,e.arg)).type?(e.method="throw",e.arg=n.arg,e.delegate=null,l):(n=n.arg)?n.done?(e[o.resultName]=n.value,e.next=o.nextLoc,"return"!==e.method&&(e.method="next",e.arg=void 0),e.delegate=null,l):n:(e.method="throw",e.arg=new TypeError("iterator result is not an object"),e.delegate=null,l);if(e.delegate=null,"throw"===e.method){if(o.iterator.return&&(e.method="return",e.arg=void 0,t(o,e),"throw"===e.method))return l;e.method="throw",e.arg=new TypeError("The iterator does not provide a 'throw' method")}return l}(e,i)){if(e===l)continue;return e}if("next"===i.method)i.sent=i._sent=i.arg;else if("throw"===i.method){if("suspendedStart"===u)throw u="completed",i.arg;i.dispatchException(i.arg)}else"return"===i.method&&i.abrupt("return",i.arg);if(u="executing","normal"===(e=c(r,y,i)).type){if(u=i.done?"completed":"suspendedYield",e.arg===l)continue;return{value:e.arg,done:i.done}}"throw"===e.type&&(u="completed",i.method="throw",i.arg=e.arg)}}),o}function c(t,o,e){try{return{type:"normal",arg:t.call(o,e)}}catch(t){return{type:"throw",arg:t}}}i.wrap=u;var l={};function a(){}function p(){}function s(){}y(o={},n,function(){return this});var m=Object.getPrototypeOf,b=((m=m&&m(m(g([]))))&&m!==t&&f.call(m,n)&&(o=m),s.prototype=a.prototype=Object.create(o));function h(t){["next","throw","return"].forEach(function(o){y(t,o,function(t){return this._invoke(o,t)})})}function _(i,u){var o;this._invoke=function(e,n){function t(){return new u(function(t,o){!function o(t,e,n,r){var y;return"throw"!==(t=c(i[t],i,e)).type?(e=(y=t.arg).value)&&"object"==_typeof(e)&&f.call(e,"__await")?u.resolve(e.__await).then(function(t){o("next",t,n,r)},function(t){o("throw",t,n,r)}):u.resolve(e).then(function(t){y.value=t,n(y)},function(t){return o("throw",t,n,r)}):void r(t.arg)}(e,n,t,o)})}return o=o?o.then(t,t):t()}}function S(t){var o={tryLoc:t[0]};1 in t&&(o.catchLoc=t[1]),2 in t&&(o.finallyLoc=t[2],o.afterLoc=t[3]),this.tryEntries.push(o)}function d(t){var o=t.completion||{};o.type="normal",delete o.arg,t.completion=o}function v(t){this.tryEntries=[{tryLoc:"root"}],t.forEach(S,this),this.reset(!0)}function g(o){if(o){var e,t=o[n];if(t)return t.call(o);if("function"==typeof o.next)return o;if(!isNaN(o.length))return e=-1,(t=function t(){for(;++e<o.length;)if(f.call(o,e))return t.value=o[e],t.done=!1,t;return t.value=void 0,t.done=!0,t}).next=t}return{next:w}}function w(){return{value:void 0,done:!0}}return y(b,"constructor",p.prototype=s),y(s,"constructor",p),p.displayName=y(s,r,"GeneratorFunction"),i.isGeneratorFunction=function(t){return!!(t="function"==typeof t&&t.constructor)&&(t===p||"GeneratorFunction"===(t.displayName||t.name))},i.mark=function(t){return Object.setPrototypeOf?Object.setPrototypeOf(t,s):(t.__proto__=s,y(t,r,"GeneratorFunction")),t.prototype=Object.create(b),t},i.awrap=function(t){return{__await:t}},h(_.prototype),y(_.prototype,e,function(){return this}),i.AsyncIterator=_,i.async=function(t,o,e,n,r){void 0===r&&(r=Promise);var y=new _(u(t,o,e,n),r);return i.isGeneratorFunction(o)?y:y.next().then(function(t){return t.done?t.value:y.next()})},h(b),y(b,r,"Generator"),y(b,n,function(){return this}),y(b,"toString",function(){return"[object Generator]"}),i.keys=function(e){var t,n=[];for(t in e)n.push(t);return n.reverse(),function t(){for(;n.length;){var o=n.pop();if(o in e)return t.value=o,t.done=!1,t}return t.done=!0,t}},i.values=g,v.prototype={constructor:v,reset:function(t){if(this.prev=0,this.next=0,this.sent=this._sent=void 0,this.done=!1,this.delegate=null,this.method="next",this.arg=void 0,this.tryEntries.forEach(d),!t)for(var o in this)"t"===o.charAt(0)&&f.call(this,o)&&!isNaN(+o.slice(1))&&(this[o]=void 0)},stop:function(){this.done=!0;var t=this.tryEntries[0].completion;if("throw"===t.type)throw t.arg;return this.rval},dispatchException:function(e){if(this.done)throw e;var n=this;function t(t,o){return y.type="throw",y.arg=e,n.next=t,o&&(n.method="next",n.arg=void 0),!!o}for(var o=this.tryEntries.length-1;0<=o;--o){var r=this.tryEntries[o],y=r.completion;if("root"===r.tryLoc)return t("end");if(r.tryLoc<=this.prev){var i=f.call(r,"catchLoc"),u=f.call(r,"finallyLoc");if(i&&u){if(this.prev<r.catchLoc)return t(r.catchLoc,!0);if(this.prev<r.finallyLoc)return t(r.finallyLoc)}else if(i){if(this.prev<r.catchLoc)return t(r.catchLoc,!0)}else{if(!u)throw new Error("try statement without catch or finally");if(this.prev<r.finallyLoc)return t(r.finallyLoc)}}}},abrupt:function(t,o){for(var e=this.tryEntries.length-1;0<=e;--e){var n=this.tryEntries[e];if(n.tryLoc<=this.prev&&f.call(n,"finallyLoc")&&this.prev<n.finallyLoc){var r=n;break}}var y=(r=r&&("break"===t||"continue"===t)&&r.tryLoc<=o&&o<=r.finallyLoc?null:r)?r.completion:{};return y.type=t,y.arg=o,r?(this.method="next",this.next=r.finallyLoc,l):this.complete(y)},complete:function(t,o){if("throw"===t.type)throw t.arg;return"break"===t.type||"continue"===t.type?this.next=t.arg:"return"===t.type?(this.rval=this.arg=t.arg,this.method="return",this.next="end"):"normal"===t.type&&o&&(this.next=o),l},finish:function(t){for(var o=this.tryEntries.length-1;0<=o;--o){var e=this.tryEntries[o];if(e.finallyLoc===t)return this.complete(e.completion,e.afterLoc),d(e),l}},catch:function(t){for(var o=this.tryEntries.length-1;0<=o;--o){var e,n,r=this.tryEntries[o];if(r.tryLoc===t)return"throw"===(e=r.completion).type&&(n=e.arg,d(r)),n}throw new Error("illegal catch attempt")},delegateYield:function(t,o,e){return this.delegate={iterator:g(t),resultName:o,nextLoc:e},"next"===this.method&&(this.arg=void 0),l}},i}function _toConsumableArray(t){return _arrayWithoutHoles(t)||_iterableToArray(t)||_unsupportedIterableToArray(t)||_nonIterableSpread()}function _nonIterableSpread(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}function _unsupportedIterableToArray(t,o){if(t){if("string"==typeof t)return _arrayLikeToArray(t,o);var e=Object.prototype.toString.call(t).slice(8,-1);return"Map"===(e="Object"===e&&t.constructor?t.constructor.name:e)||"Set"===e?Array.from(t):"Arguments"===e||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(e)?_arrayLikeToArray(t,o):void 0}}function _iterableToArray(t){if("undefined"!=typeof Symbol&&null!=t[Symbol.iterator]||null!=t["@@iterator"])return Array.from(t)}function _arrayWithoutHoles(t){if(Array.isArray(t))return _arrayLikeToArray(t)}function _arrayLikeToArray(t,o){(null==o||o>t.length)&&(o=t.length);for(var e=0,n=new Array(o);e<o;e++)n[e]=t[e];return n}function asyncGeneratorStep(t,o,e,n,r,y,i){try{var u=t[y](i),f=u.value}catch(t){return void e(t)}u.done?o(f):Promise.resolve(f).then(n,r)}function _asyncToGenerator(u){return function(){var t=this,i=arguments;return new Promise(function(o,e){var n=u.apply(t,i);function r(t){asyncGeneratorStep(n,o,e,r,y,"next",t)}function y(t){asyncGeneratorStep(n,o,e,r,y,"throw",t)}r(void 0)})}}window.addEventListener("load",function(){function t(){var t=document.body.style;t.width="100%",t.overflow="hidden",btf.animateIn(i,"to_show 0.5s"),btf.animateIn(document.querySelector("#local-search .search-dialog"),"titleScale 0.5s"),setTimeout(function(){document.querySelector("#local-search-input input").focus()},100),n||(f(),n=!0),document.addEventListener("keydown",function t(o){"Escape"===o.code&&(u(),document.removeEventListener("keydown",t))})}function o(){document.querySelector("#search-button > .search").addEventListener("click",t)}function r(){return e.apply(this,arguments)}var e,n=!1,y=[],i=document.getElementById("search-mask"),u=function(){var t=document.body.style;t.width="",t.overflow="",btf.animateOut(document.querySelector("#local-search .search-dialog"),"search_close .5s"),btf.animateOut(i,"to_hide 0.5s")},f=(e=_asyncToGenerator(_regeneratorRuntime().mark(function t(o){var e,n,r,y;return _regeneratorRuntime().wrap(function(t){for(;;)switch(t.prev=t.next){case 0:return e=[],t.next=3,fetch(o);case 3:if(n=t.sent,/\.json$/.test(o))return t.next=7,n.json();t.next=10;break;case 7:e=t.sent,t.next=20;break;case 10:return t.next=12,n.text();case 12:return r=t.sent,t.next=15,(new window.DOMParser).parseFromString(r,"text/xml");case 15:return r=t.sent,t.next=18,r;case 18:y=t.sent,e=_toConsumableArray(y.querySelectorAll("entry")).map(function(t){return{title:t.querySelector("title").textContent,content:t.querySelector("content")&&t.querySelector("content").textContent,url:t.querySelector("url").textContent}});case 20:return n.ok&&((y=document.getElementById("loading-database")).nextElementSibling.style.display="block",y.remove()),t.abrupt("return",e);case 22:case"end":return t.stop()}},t)})),function(){GLOBAL_CONFIG.localSearch.preload||(y=r(GLOBAL_CONFIG.localSearch.path));var t=document.querySelector("#local-search-input input"),e=document.getElementById("local-search-results"),n=document.getElementById("loading-status");t.addEventListener("input",function(){var p,o=this,s=this.value.trim().toLowerCase().split(/[\s]+/),m=(""!==s[0]&&(n.innerHTML='<i class="fas fa-spinner fa-pulse"></i>'),e.innerHTML="",'<div class="search-result-list">');s.length<=0||(p=0,y.then(function(t){t.forEach(function(t){var e,o,n,r,y,i,u=!0,f=t.title?t.title.trim().toLowerCase():"",c=t.content?t.content.trim().replace(/<[^>]+>/g,"").toLowerCase():"",t=t.url.startsWith("/")?t.url:GLOBAL_CONFIG.root+t.url,l=-1,a=-1;""!==f||""!==c?s.forEach(function(t,o){e=f.indexOf(t),l=c.indexOf(t),e<0&&l<0?u=!1:(l<0&&(l=0),0===o&&(a=l))}):u=!1,u&&(0<=a&&(n=a+100,y=r="",0===(o=(o=a-30)<0?0:o)?n=100:r="...",n>c.length?n=c.length:y="...",i=c.substring(o,n),s.forEach(function(t){var o=new RegExp(t,"gi");i=i.replace(o,'<span class="search-keyword">'+t+"</span>"),f=f.replace(o,'<span class="search-keyword">'+t+"</span>")}),m+='<div class="local-search__hit-item"><a href="'+t+'" class="search-result-title">'+f+"</a>",p+=1,""!==c&&(m+='<p class="search-result">'+r+i+y+"</p>")),m+="</div>")}),0===p&&(m+='<div id="local-search__hits-empty">'+GLOBAL_CONFIG.localSearch.languages.hits_empty.replace(/\$\{query}/,o.value.trim())+"</div>"),m+="</div>",e.innerHTML=m,""!==s[0]&&(n.innerHTML=""),window.pjax&&window.pjax.refresh(e)}))})});o(),document.querySelector("#local-search .search-close-button").addEventListener("click",u),i.addEventListener("click",u),GLOBAL_CONFIG.localSearch.preload&&(y=r(GLOBAL_CONFIG.localSearch.path)),window.addEventListener("pjax:complete",function(){btf.isHidden(i)||u(),o()})});
+window.addEventListener('load', () => {
+  let loadFlag = false
+  let dataObj = []
+  const $searchMask = document.getElementById('search-mask')
+
+  const openSearch = () => {
+    const bodyStyle = document.body.style
+    bodyStyle.width = '100%'
+    bodyStyle.overflow = 'hidden'
+    btf.animateIn($searchMask, 'to_show 0.5s')
+    btf.animateIn(document.querySelector('#local-search .search-dialog'), 'titleScale 0.5s')
+    setTimeout(() => { document.querySelector('#local-search-input input').focus() }, 100)
+    if (!loadFlag) {
+      search()
+      loadFlag = true
+    }
+    // shortcut: ESC
+    document.addEventListener('keydown', function f (event) {
+      if (event.code === 'Escape') {
+        closeSearch()
+        document.removeEventListener('keydown', f)
+      }
+    })
+  }
+
+  const closeSearch = () => {
+    const bodyStyle = document.body.style
+    bodyStyle.width = ''
+    bodyStyle.overflow = ''
+    btf.animateOut(document.querySelector('#local-search .search-dialog'), 'search_close .5s')
+    btf.animateOut($searchMask, 'to_hide 0.5s')
+  }
+
+  const searchClickFn = () => {
+    document.querySelector('#search-button > .search').addEventListener('click', openSearch)
+  }
+
+  const searchClickFnOnce = () => {
+    document.querySelector('#local-search .search-close-button').addEventListener('click', closeSearch)
+    $searchMask.addEventListener('click', closeSearch)
+    if (GLOBAL_CONFIG.localSearch.preload) dataObj = fetchData(GLOBAL_CONFIG.localSearch.path)
+  }
+
+  // check url is json or not
+  const isJson = url => {
+    const reg = /\.json$/
+    return reg.test(url)
+  }
+
+  const fetchData = async (path) => {
+    let data = []
+    const response = await fetch(path)
+    if (isJson(path)) {
+      data = await response.json()
+    } else {
+      const res = await response.text()
+      const t = await new window.DOMParser().parseFromString(res, 'text/xml')
+      const a = await t
+      data = [...a.querySelectorAll('entry')].map(item =>{
+        return {
+          title: item.querySelector('title').textContent,
+          content: item.querySelector('content') && item.querySelector('content').textContent,
+          url: item.querySelector('url').textContent
+        }
+      })
+    }
+    if (response.ok) {
+      const $loadDataItem = document.getElementById('loading-database')
+      $loadDataItem.nextElementSibling.style.display = 'block'
+      $loadDataItem.remove()
+    }
+    return data
+  }
+
+  const search = () => {
+    if (!GLOBAL_CONFIG.localSearch.preload) {
+      dataObj = fetchData(GLOBAL_CONFIG.localSearch.path)
+    }
+
+    const $input = document.querySelector('#local-search-input input')
+    const $resultContent = document.getElementById('local-search-results')
+    const $loadingStatus = document.getElementById('loading-status')
+
+    $input.addEventListener('input', function () {
+      const keywords = this.value.trim().toLowerCase().split(/[\s]+/)
+      if (keywords[0] !== '') $loadingStatus.innerHTML = '<i class="fas fa-spinner fa-pulse"></i>'
+
+      $resultContent.innerHTML = ''
+      let str = '<div class="search-result-list">'
+      if (keywords.length <= 0) return
+      let count = 0
+      // perform local searching
+      dataObj.then(data => {
+        data.forEach(data => {
+          let isMatch = true
+          let dataTitle = data.title ? data.title.trim().toLowerCase() : ''
+          const dataContent = data.content ? data.content.trim().replace(/<[^>]+>/g, '').toLowerCase() : ''
+          const dataUrl = data.url.startsWith('/') ? data.url : GLOBAL_CONFIG.root + data.url
+          let indexTitle = -1
+          let indexContent = -1
+          let firstOccur = -1
+          // only match articles with not empty titles and contents
+          if (dataTitle !== '' || dataContent !== '') {
+            keywords.forEach((keyword, i) => {
+              indexTitle = dataTitle.indexOf(keyword)
+              indexContent = dataContent.indexOf(keyword)
+              if (indexTitle < 0 && indexContent < 0) {
+                isMatch = false
+              } else {
+                if (indexContent < 0) {
+                  indexContent = 0
+                }
+                if (i === 0) {
+                  firstOccur = indexContent
+                }
+              }
+            })
+          } else {
+            isMatch = false
+          }
+
+          // show search results
+          if (isMatch) {
+            if (firstOccur >= 0) {
+              // cut out 130 characters
+              // let start = firstOccur - 30 < 0 ? 0 : firstOccur - 30
+              // let end = firstOccur + 50 > dataContent.length ? dataContent.length : firstOccur + 50
+              let start = firstOccur - 30
+              let end = firstOccur + 100
+              let pre = ''
+              let post = ''
+
+              if (start < 0) {
+                start = 0
+              }
+
+              if (start === 0) {
+                end = 100
+              } else {
+                pre = '...'
+              }
+
+              if (end > dataContent.length) {
+                end = dataContent.length
+              } else {
+                post = '...'
+              }
+
+              let matchContent = dataContent.substring(start, end)
+
+              // highlight all keywords
+              keywords.forEach(keyword => {
+                const regS = new RegExp(keyword, 'gi')
+                matchContent = matchContent.replace(regS, '<span class="search-keyword">' + keyword + '</span>')
+                dataTitle = dataTitle.replace(regS, '<span class="search-keyword">' + keyword + '</span>')
+              })
+
+              str += '<div class="local-search__hit-item"><a href="' + dataUrl + '" class="search-result-title">' + dataTitle + '</a>'
+              count += 1
+
+              if (dataContent !== '') {
+                str += '<p class="search-result">' + pre + matchContent + post + '</p>'
+              }
+            }
+            str += '</div>'
+          }
+        })
+        if (count === 0) {
+          str += '<div id="local-search__hits-empty">' + GLOBAL_CONFIG.localSearch.languages.hits_empty.replace(/\$\{query}/, this.value.trim()) +
+            '</div>'
+        }
+        str += '</div>'
+        $resultContent.innerHTML = str
+        if (keywords[0] !== '') $loadingStatus.innerHTML = ''
+        window.pjax && window.pjax.refresh($resultContent)
+      })
+    })
+  }
+
+  searchClickFn()
+  searchClickFnOnce()
+
+  // pjax
+  window.addEventListener('pjax:complete', () => {
+    !btf.isHidden($searchMask) && closeSearch()
+    searchClickFn()
+  })
+})
