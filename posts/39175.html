@@ -1,195 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Django-Vue搭建个人博客(1)：搭建开发环境 | 小邹同学</title><meta name="keywords" content="Django,Django REST framework,Vue,前后端分离"><meta name="author" content="小邹同学"><meta name="copyright" content="小邹同学"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="本教程是一个以前后端分离模式开发个人博客的教程，目的是快速搭建现代化个人博客网站。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Django-Vue搭建个人博客(1)：搭建开发环境">
-<meta property="og:url" content="https://xiongbinzou.github.io/posts/39175.html">
-<meta property="og:site_name" content="小邹同学">
-<meta property="og:description" content="本教程是一个以前后端分离模式开发个人博客的教程，目的是快速搭建现代化个人博客网站。">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://xiongbinzou.github.io/pics/avatar.jpg">
-<meta property="article:published_time" content="2023-04-03T13:00:00.000Z">
-<meta property="article:modified_time" content="2023-04-10T10:28:50.415Z">
-<meta property="article:author" content="小邹同学">
-<meta property="article:tag" content="Django">
-<meta property="article:tag" content="Django REST framework">
-<meta property="article:tag" content="Vue">
-<meta property="article:tag" content="前后端分离">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://xiongbinzou.github.io/pics/avatar.jpg"><link rel="shortcut icon" href="/pics/favicon.png"><link rel="canonical" href="https://xiongbinzou.github.io/posts/39175"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
-  root: '/',
-  algolia: undefined,
-  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
-  translate: undefined,
-  noticeOutdate: undefined,
-  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '天',
-  date_suffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: {"limitCount":300,"languages":{"author":"作者: 小邹同学","link":"链接: ","source":"来源: 小邹同学","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
-  lightbox: 'fancybox',
-  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"top-right"},
-  source: {
-    justifiedGallery: {
-      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
-    }
-  },
-  isPhotoFigcaption: true,
-  islazyload: false,
-  isAnchor: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: 'Django-Vue搭建个人博客(1)：搭建开发环境',
-  isPost: true,
-  isHome: false,
-  isHighlightShrink: false,
-  isToc: true,
-  postUpdate: '2023-04-10 18:28:50'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
-
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(win=>{
-    win.saveToLocal = {
-      set: function setWithExpiry(key, value, ttl) {
-        if (ttl === 0) return
-        const now = new Date()
-        const expiryDay = ttl * 86400000
-        const item = {
-          value: value,
-          expiry: now.getTime() + expiryDay,
-        }
-        localStorage.setItem(key, JSON.stringify(item))
-      },
-
-      get: function getWithExpiry(key) {
-        const itemStr = localStorage.getItem(key)
-
-        if (!itemStr) {
-          return undefined
-        }
-        const item = JSON.parse(itemStr)
-        const now = new Date()
-
-        if (now.getTime() > item.expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return item.value
-      }
-    }
-  
-    win.getScript = url => new Promise((resolve, reject) => {
-      const script = document.createElement('script')
-      script.src = url
-      script.async = true
-      script.onerror = reject
-      script.onload = script.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        script.onload = script.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(script)
-    })
-  
-      win.activateDarkMode = function () {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      win.activateLightMode = function () {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-      const t = saveToLocal.get('theme')
-    
-          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
-          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
-          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
-
-          if (t === undefined) {
-            if (isLightMode) activateLightMode()
-            else if (isDarkMode) activateDarkMode()
-            else if (isNotSpecified || hasNoSupport) {
-              const now = new Date()
-              const hour = now.getHours()
-              const isNight = hour <= 6 || hour >= 18
-              isNight ? activateDarkMode() : activateLightMode()
-            }
-            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
-              if (saveToLocal.get('theme') === undefined) {
-                e.matches ? activateDarkMode() : activateLightMode()
-              }
-            })
-          } else if (t === 'light') activateLightMode()
-          else activateDarkMode()
-        
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
-    
-    const detectApple = () => {
-      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
-    })(window)</script><meta name="generator" content="Hexo 5.4.2">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/pics/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li><li><a class="site-page child" href="/games/"><i class="fa-fw fa fa-gamepad"></i><span> 游戏</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">小邹同学</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li><li><a class="site-page child" href="/games/"><i class="fa-fw fa fa-gamepad"></i><span> 游戏</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Django-Vue搭建个人博客(1)：搭建开发环境</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-04-03T13:00:00.000Z" title="发表于 2023-04-03 21:00:00">2023-04-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-04-10T10:28:50.415Z" title="更新于 2023-04-10 18:28:50">2023-04-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Django-Vue/">Django &amp; Vue</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="1-开发环境">1. 开发环境</h2>
-<p>本教程的前端开发环境为：</p>
-<ul>
-<li>
-<p><strong>Vue 3.2.47</strong></p>
-</li>
-<li>
-<p><strong>Vite 4.1.4</strong></p>
-</li>
-<li>
-<p><strong>npm 9.5.1</strong></p>
-</li>
-</ul>
-<p>本教程的后端开发环境为：</p>
-<ul>
-<li><strong>Win 11（64位）</strong></li>
-<li><strong>Python 3.10.6</strong></li>
-<li><strong>Django 4.1.7</strong></li>
-<li><strong>Django REST framework 3.14.0</strong></li>
-</ul>
-<h2 id="2-前端开发准备">2. 前端开发准备</h2>
-<p>开发前端时会用到 <strong>npm</strong> （类似Python的包管理工具pip），这是 Node.js 官方提供的包管理工具，而 Node.js 可以使用 nvm 来进行安装和管理，所以准备工作的第一步，安装 nvm，下载地址在<a target="_blank" rel="noopener" href="https://nvm.uihtm.com/">官网</a>，安装时基本就是一路 next。</p>
-<p>完毕后打开命令行（依旧默认是 PowerShell），输入：</p>
-<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">&gt; nvm <span class="token operator">-</span>v
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>Django-Vue搭建个人博客(1)：搭建开发环境 | 小邹同学</title><meta name="keywords" content="Django,Django REST framework,Vue,前后端分离"><meta name="author" content="小邹同学"><meta name="copyright" content="小邹同学"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="本教程是一个以前后端分离模式开发个人博客的教程，目的是快速搭建现代化个人博客网站。"><meta property="og:type" content="article"><meta property="og:title" content="Django-Vue搭建个人博客(1)：搭建开发环境"><meta property="og:url" content="https://xiongbinzou.github.io/posts/39175.html"><meta property="og:site_name" content="小邹同学"><meta property="og:description" content="本教程是一个以前后端分离模式开发个人博客的教程，目的是快速搭建现代化个人博客网站。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://xiongbinzou.github.io/pics/avatar.jpg"><meta property="article:published_time" content="2023-04-03T13:00:00.000Z"><meta property="article:modified_time" content="2023-04-10T10:28:50.415Z"><meta property="article:author" content="小邹同学"><meta property="article:tag" content="Django"><meta property="article:tag" content="Django REST framework"><meta property="article:tag" content="Vue"><meta property="article:tag" content="前后端分离"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://xiongbinzou.github.io/pics/avatar.jpg"><link rel="shortcut icon" href="/pics/favicon.png"><link rel="canonical" href="https://xiongbinzou.github.io/posts/39175"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload='this.media="all"'><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload='this.media="all"'><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload='this.media="all"'><script>const GLOBAL_CONFIG={root:"/",algolia:void 0,localSearch:{path:"/search.xml",preload:!1,languages:{hits_empty:"找不到您查询的内容：${query}"}},translate:void 0,noticeOutdate:void 0,highlight:{plugin:"prismjs",highlightCopy:!0,highlightLang:!0,highlightHeightLimit:!1},copy:{success:"复制成功",error:"复制错误",noSupport:"浏览器不支持"},relativeDate:{homepage:!1,post:!1},runtime:"天",date_suffix:{just:"刚刚",min:"分钟前",hour:"小时前",day:"天前",month:"个月前"},copyright:{limitCount:300,languages:{author:"作者: 小邹同学",link:"链接: ",source:"来源: 小邹同学",info:"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},lightbox:"fancybox",Snackbar:{chs_to_cht:"你已切换为繁体",cht_to_chs:"你已切换为简体",day_to_night:"你已切换为深色模式",night_to_day:"你已切换为浅色模式",bgLight:"#49b1f5",bgDark:"#121212",position:"top-right"},source:{justifiedGallery:{js:"https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js",css:"https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css"}},isPhotoFigcaption:!0,islazyload:!1,isAnchor:!1}</script><script id="config-diff">var GLOBAL_CONFIG_SITE={title:"Django-Vue搭建个人博客(1)：搭建开发环境",isPost:!0,isHome:!1,isHighlightShrink:!1,isToc:!0,postUpdate:"2023-04-10 18:28:50"}</script><noscript><style>#nav{opacity:1}.justified-gallery img{opacity:1}#post-meta time,#recent-posts time{display:inline!important}</style></noscript><script>(e=>{e.saveToLocal={set:function(e,t,o){if(0===o)return;const a=864e5*o,c={value:t,expiry:(new Date).getTime()+a};localStorage.setItem(e,JSON.stringify(c))},get:function(e){const t=localStorage.getItem(e);if(!t)return;const o=JSON.parse(t);if(!((new Date).getTime()>o.expiry))return o.value;localStorage.removeItem(e)}},e.getScript=e=>new Promise(((t,o)=>{const a=document.createElement("script");a.src=e,a.async=!0,a.onerror=o,a.onload=a.onreadystatechange=function(){const e=this.readyState;e&&"loaded"!==e&&"complete"!==e||(a.onload=a.onreadystatechange=null,t())},document.head.appendChild(a)})),e.activateDarkMode=function(){document.documentElement.setAttribute("data-theme","dark"),null!==document.querySelector('meta[name="theme-color"]')&&document.querySelector('meta[name="theme-color"]').setAttribute("content","#0d0d0d")},e.activateLightMode=function(){document.documentElement.setAttribute("data-theme","light"),null!==document.querySelector('meta[name="theme-color"]')&&document.querySelector('meta[name="theme-color"]').setAttribute("content","#ffffff")};const t=saveToLocal.get("theme"),o=window.matchMedia("(prefers-color-scheme: dark)").matches,a=window.matchMedia("(prefers-color-scheme: light)").matches,c=window.matchMedia("(prefers-color-scheme: no-preference)").matches,n=!o&&!a&&!c;if(void 0===t){if(a)activateLightMode();else if(o)activateDarkMode();else if(c||n){const e=(new Date).getHours();e<=6||e>=18?activateDarkMode():activateLightMode()}window.matchMedia("(prefers-color-scheme: dark)").addListener((function(e){void 0===saveToLocal.get("theme")&&(e.matches?activateDarkMode():activateLightMode())}))}else"light"===t?activateLightMode():activateDarkMode();const i=saveToLocal.get("aside-status");void 0!==i&&("hide"===i?document.documentElement.classList.add("hide-aside"):document.documentElement.classList.remove("hide-aside"));/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)&&document.documentElement.classList.add("apple")})(window)</script><meta name="generator" content="Hexo 5.4.2"><style>.github-emoji{position:relative;display:inline-block;width:1.2em;min-height:1.2em;overflow:hidden;vertical-align:top;color:transparent}.github-emoji>span{position:relative;z-index:10}.github-emoji .fancybox,.github-emoji img{margin:0!important;padding:0!important;border:none!important;outline:0!important;text-decoration:none!important;user-select:none!important;cursor:auto!important}.github-emoji img{height:1.2em!important;width:1.2em!important;position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;user-select:none!important;cursor:auto!important}.github-emoji-fallback{color:inherit}.github-emoji-fallback img{opacity:0!important}</style></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/pics/avatar.jpg" onerror='onerror=null,src="/img/friend_404.gif"' alt="avatar"></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i> <span>主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-graduation-cap"></i> <span>博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-archive"></i> <span>归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-folder-open"></i> <span>分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i> <span>标签</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i> <span>生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i> <span>相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i> <span>音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i> <span>影视</span></a></li><li><a class="site-page child" href="/games/"><i class="fa-fw fa fa-gamepad"></i> <span>游戏</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i> <span>友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i> <span>关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image:url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">小邹同学</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i> <span>搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i> <span>主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-graduation-cap"></i> <span>博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-archive"></i> <span>归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-folder-open"></i> <span>分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i> <span>标签</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i> <span>生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i> <span>相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i> <span>音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i> <span>影视</span></a></li><li><a class="site-page child" href="/games/"><i class="fa-fw fa fa-gamepad"></i> <span>游戏</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i> <span>友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i> <span>关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Django-Vue搭建个人博客(1)：搭建开发环境</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-04-03T13:00:00.000Z" title="发表于 2023-04-03 21:00:00">2023-04-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-04-10T10:28:50.415Z" title="更新于 2023-04-10 18:28:50">2023-04-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Django-Vue/">Django &amp; Vue</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="1-开发环境">1. 开发环境</h2><p>本教程的前端开发环境为：</p><ul><li><p><strong>Vue 3.2.47</strong></p></li><li><p><strong>Vite 4.1.4</strong></p></li><li><p><strong>npm 9.5.1</strong></p></li></ul><p>本教程的后端开发环境为：</p><ul><li><strong>Win 11（64位）</strong></li><li><strong>Python 3.10.6</strong></li><li><strong>Django 4.1.7</strong></li><li><strong>Django REST framework 3.14.0</strong></li></ul><h2 id="2-前端开发准备">2. 前端开发准备</h2><p>开发前端时会用到 <strong>npm</strong> （类似Python的包管理工具pip），这是 Node.js 官方提供的包管理工具，而 Node.js 可以使用 nvm 来进行安装和管理，所以准备工作的第一步，安装 nvm，下载地址在<a target="_blank" rel="noopener" href="https://nvm.uihtm.com/">官网</a>，安装时基本就是一路 next。</p><p>完毕后打开命令行（依旧默认是 PowerShell），输入：</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">&gt; nvm <span class="token operator">-</span>v
 1<span class="token punctuation">.</span>1<span class="token punctuation">.</span>10
 
 &gt; nvm install 19<span class="token punctuation">.</span>8<span class="token punctuation">.</span>1
@@ -214,20 +23,12 @@ Now <span class="token keyword">using</span> node v19<span class="token punctuat
 
 &gt; npm <span class="token operator">-</span>v
 9<span class="token punctuation">.</span>5<span class="token punctuation">.</span>1
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>显示版号就表示安装成功了。</p>
-<blockquote>
-<p><em>npm 站点在国外，如果你遇到安装速度慢的问题，可以用指令</em> <code>npm config set registry https://registry.npm.taobao.org</code> <em>修改为国内镜像源。</em></p>
-</blockquote>
-<p>在命令行中允许一下命令：</p>
-<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">&gt; npm init vue@latest
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>显示版号就表示安装成功了。</p><blockquote><p><em>npm 站点在国外，如果你遇到安装速度慢的问题，可以用指令</em> <code>npm config set registry https://registry.npm.taobao.org</code> <em>修改为国内镜像源。</em></p></blockquote><p>在命令行中允许一下命令：</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">&gt; npm init vue@latest
 Need to install the following packages:
   create-vue@3<span class="token punctuation">.</span>6<span class="token punctuation">.</span>1
 Ok to proceed? <span class="token punctuation">(</span>y<span class="token punctuation">)</span> y
 
-Vue<span class="token punctuation">.</span>js <span class="token operator">-</span> The Progressive JavaScript Framework<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>该指令会安装并执行 <strong>create-vue</strong>，它是 Vue 官方的项目脚手架工具，你将看到一些诸如TypeScript和测试支持之类的可选功能提示：</p>
-<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">✔ Project name: … frontend
+Vue<span class="token punctuation">.</span>js <span class="token operator">-</span> The Progressive JavaScript Framework<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>该指令会安装并执行 <strong>create-vue</strong>，它是 Vue 官方的项目脚手架工具，你将看到一些诸如TypeScript和测试支持之类的可选功能提示：</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">✔ Project name: … frontend
 ✔ Add TypeScript? … No <span class="token operator">/</span> Yes
 ✔ Add JSX Support? … No <span class="token operator">/</span> Yes
 ✔ Add Vue Router <span class="token keyword">for</span> Single Page Application development? … No <span class="token operator">/</span> Yes
@@ -243,9 +44,7 @@ Done<span class="token punctuation">.</span> Now run:
 
   cd frontend
   npm install
-  npm run dev<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>如果不确定是否要开启某个功能，你可以直接按下回车键选择 <code>No</code>。在项目被创建后，通过以下步骤安装依赖并启动开发服务器：</p>
-<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">&gt; cd frontend
+  npm run dev<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>如果不确定是否要开启某个功能，你可以直接按下回车键选择 <code>No</code>。在项目被创建后，通过以下步骤安装依赖并启动开发服务器：</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">&gt; cd frontend
 &gt; npm install <span class="token comment"># 耐心等待包安装完毕</span>
 &gt; npm run dev
 <span class="token comment"># 输出：</span>
@@ -257,29 +56,12 @@ Done<span class="token punctuation">.</span> Now run:
 
   ➜  Local:   http:<span class="token operator">/</span><span class="token operator">/</span>localhost:5173/
   ➜  Network: use <span class="token operator">--</span>host to expose
-  ➜  press h to show help<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>打开 Chrome 浏览器，输入http://localhost:5173/ ，即可看到 Vue 的欢迎页面了，前端项目已经正常运行了。</p>
-<p><img src="Django-Vue%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2(1)%EF%BC%9A%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/image-20230326221239847.png" alt="Vue欢迎页面"></p>
-<h2 id="3-后端开发准备">3. 后端开发准备</h2>
-<p>python的安装比较简单，首先找到<a target="_blank" rel="noopener" href="https://www.python.org/">Python官方网站</a>，选择 python 3.10.6 的 windows 版本，下载并安装。</p>
-<p><strong>安装时注意勾选python到环境变量</strong>，如果没有找到，请安装完毕后自行添加python的环境变量。</p>
-<p>安装完成后打开命令行，输入<code>python -V</code>，打印出正确的版本号则说明安装成功了：</p>
-<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">&gt; python <span class="token operator">-</span>V
-Python 3<span class="token punctuation">.</span>10<span class="token punctuation">.</span>6<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>python 的<strong>虚拟环境</strong>是 python 多版本管理工具，可以使每个项目环境与其他项目隔离起来，解决包冲突的问题。</p>
-<p><strong>python3.3 版本开始就自带了虚拟环境安装指令，配置一下就可以用了。</strong></p>
-<p>在CMD命令行中运行下面指令（poweshell上可能修改执行策略才能运行成功）：</p>
-<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">D:\&gt; mkdir my_blog &amp;&amp; cd my_blog
+  ➜  press h to show help<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>打开 Chrome 浏览器，输入http://localhost:5173/ ，即可看到 Vue 的欢迎页面了，前端项目已经正常运行了。</p><p><img src="Django-Vue%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2(1)%EF%BC%9A%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/image-20230326221239847.png" alt="Vue欢迎页面"></p><h2 id="3-后端开发准备">3. 后端开发准备</h2><p>python的安装比较简单，首先找到<a target="_blank" rel="noopener" href="https://www.python.org/">Python官方网站</a>，选择 python 3.10.6 的 windows 版本，下载并安装。</p><p><strong>安装时注意勾选python到环境变量</strong>，如果没有找到，请安装完毕后自行添加python的环境变量。</p><p>安装完成后打开命令行，输入<code>python -V</code>，打印出正确的版本号则说明安装成功了：</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">&gt; python <span class="token operator">-</span>V
+Python 3<span class="token punctuation">.</span>10<span class="token punctuation">.</span>6<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>python 的<strong>虚拟环境</strong>是 python 多版本管理工具，可以使每个项目环境与其他项目隔离起来，解决包冲突的问题。</p><p><strong>python3.3 版本开始就自带了虚拟环境安装指令，配置一下就可以用了。</strong></p><p>在CMD命令行中运行下面指令（poweshell上可能修改执行策略才能运行成功）：</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">D:\&gt; mkdir my_blog &amp;&amp; cd my_blog
 D:\my_blog&gt;
 D:\my_blog&gt; python <span class="token operator">-</span>m venv venv
 D:\my_blog&gt; venv\Scripts\activate
-<span class="token punctuation">(</span>venv<span class="token punctuation">)</span> D:\my_blog&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>盘符前有<code>(venv)</code>标识说明进入venv成功。</strong></p>
-<blockquote>
-<p><em>若上述方法不成功，则可以通过</em> <code>virtualenv</code> <em>库创建虚拟环境。</em></p>
-</blockquote>
-<p>在虚拟环境下，输入命令：</p>
-<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token comment"># 安装Django</span>
+<span class="token punctuation">(</span>venv<span class="token punctuation">)</span> D:\my_blog&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><strong>盘符前有<code>(venv)</code>标识说明进入venv成功。</strong></p><blockquote><p><em>若上述方法不成功，则可以通过</em> <code>virtualenv</code> <em>库创建虚拟环境。</em></p></blockquote><p>在虚拟环境下，输入命令：</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token comment"># 安装Django</span>
 <span class="token punctuation">(</span>venv<span class="token punctuation">)</span> D:\my_blog&gt; pip install django==4<span class="token punctuation">.</span>1<span class="token punctuation">.</span>7
 <span class="token comment"># 新建项目</span>
 <span class="token punctuation">(</span>venv<span class="token punctuation">)</span> D:\my_blog&gt; django-admin startproject backend
@@ -292,10 +74,7 @@ Performing system checks<span class="token punctuation">.</span><span class="tok
 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 Django version 4<span class="token punctuation">.</span>1<span class="token punctuation">.</span>7<span class="token punctuation">,</span> <span class="token keyword">using</span> settings <span class="token string">'backend.settings'</span>
 Starting development server at http:<span class="token operator">/</span><span class="token operator">/</span>127<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>1:8000/
-Quit the server with CTRL-<span class="token keyword">BREAK</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>系统打印出这些信息，说明服务器启动成功了。</p>
-<p>查看<code>my_blog</code>文件，发现多了<code>backend</code>文件夹，其结构应该为：</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">backend
+Quit the server with CTRL-<span class="token keyword">BREAK</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>系统打印出这些信息，说明服务器启动成功了。</p><p>查看<code>my_blog</code>文件，发现多了<code>backend</code>文件夹，其结构应该为：</p><pre class="line-numbers language-text" data-language="text"><code class="language-text">backend
 │  manage.py
 │  db.sqlite3
 └─backend
@@ -303,126 +82,8 @@ Quit the server with CTRL-<span class="token keyword">BREAK</span><span class="t
 	|  asgi.py
     │  settings.py
     │  urls.py
-    └─ wsgi.py<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>打开 Chrome 浏览器，输入http://127.0.0.1:8000/ ，即可看到 Django 的欢迎页面了，项目已经正常运行了。</p>
-<p><img src="Django-Vue%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2(1)%EF%BC%9A%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/image-20230326223920457.png" alt="Django欢迎页面"></p>
-<h2 id="4-工具推荐">4. 工具推荐</h2>
-<ul>
-<li>代码编辑器 - 推荐使用 <a target="_blank" rel="noopener" href="https://code.visualstudio.com/">VS Code</a></li>
-<li>浏览器 - 推荐 <a target="_blank" rel="noopener" href="https://www.google.com/chrome/">Chrome</a></li>
-</ul>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">本文标题： Django-Vue搭建个人博客：前言
+    └─ wsgi.py<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>打开 Chrome 浏览器，输入http://127.0.0.1:8000/ ，即可看到 Django 的欢迎页面了，项目已经正常运行了。</p><p><img src="Django-Vue%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2(1)%EF%BC%9A%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/image-20230326223920457.png" alt="Django欢迎页面"></p><h2 id="4-工具推荐">4. 工具推荐</h2><ul><li>代码编辑器 - 推荐使用 <a target="_blank" rel="noopener" href="https://code.visualstudio.com/">VS Code</a></li><li>浏览器 - 推荐 <a target="_blank" rel="noopener" href="https://www.google.com/chrome/">Chrome</a></li></ul><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">本文标题： Django-Vue搭建个人博客：前言
 原文链接： https://www.dusaiphoto.com/article/104/
 原文作者： 杜赛
 许可协议： 署名-非商业性使用 4.0 国际许可协议
-本文对原始作品作了修改，转载请保留原文链接及作者<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://xiongbinzou.github.io">小邹同学</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://xiongbinzou.github.io/posts/39175.html">https://xiongbinzou.github.io/posts/39175.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://xiongbinzou.github.io" target="_blank">小邹同学</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Django/">Django</a><a class="post-meta__tags" href="/tags/Django-REST-framework/">Django REST framework</a><a class="post-meta__tags" href="/tags/Vue/">Vue</a><a class="post-meta__tags" href="/tags/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/">前后端分离</a></div><div class="post_share"><div class="social-share" data-image="/pics/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/pics/reward/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/pics/reward/wechat.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/pics/reward/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/pics/reward/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/8442.html"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Django-Vue搭建个人博客(2)：DRF的使用</div></div></a></div><div class="next-post pull-right"><a href="/posts/63190.html"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Django-Vue搭建个人博客(0)：前言</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/63190.html" title="Django-Vue搭建个人博客(0)：前言"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-02</div><div class="title">Django-Vue搭建个人博客(0)：前言</div></div></a></div><div><a href="/posts/8442.html" title="Django-Vue搭建个人博客(2)：DRF的使用"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-04</div><div class="title">Django-Vue搭建个人博客(2)：DRF的使用</div></div></a></div><div><a href="/posts/16431.html" title="Django-Vue搭建个人博客(3)：后端功能完善"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-05</div><div class="title">Django-Vue搭建个人博客(3)：后端功能完善</div></div></a></div><div><a href="/posts/12498.html" title="Django-Vue搭建个人博客(4)：前端功能完善"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-06</div><div class="title">Django-Vue搭建个人博客(4)：前端功能完善</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="toc-text">1. 开发环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E5%87%86%E5%A4%87"><span class="toc-text">2. 前端开发准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E5%87%86%E5%A4%87"><span class="toc-text">3. 后端开发准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90"><span class="toc-text">4. 工具推荐</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By 小邹同学</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">你好，欢迎来到<a href="https://xiongbinzou.github.io">小邹同学的Secret Base</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
-  endLoading: () => {
-    document.body.style.overflow = 'auto';
-    document.getElementById('loading-box').classList.add("loaded")
-  },
-  initLoading: () => {
-    document.body.style.overflow = '';
-    document.getElementById('loading-box').classList.remove("loaded")
-
-  }
-}
-window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>if (!window.MathJax) {
-  window.MathJax = {
-    tex: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"]],
-      tags: 'ams'
-    },
-    chtml: {
-      scale: 1.2
-    },
-    options: {
-      renderActions: {
-        findScript: [10, doc => {
-          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
-            const display = !!node.type.match(/; *mode=display/)
-            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
-            const text = document.createTextNode('')
-            node.parentNode.replaceChild(text, node)
-            math.start = {node: text, delim: '', n: 0}
-            math.end = {node: text, delim: '', n: 0}
-            doc.math.push(math)
-          }
-        }, ''],
-        insertScript: [200, () => {
-          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
-            const target = node.parentNode
-            if (target.nodeName.toLowerCase() === 'li') {
-              target.parentNode.classList.add('has-jax')
-            } else {
-              target.classList.add('has-jax')
-            }
-          });
-        }, '', false]
-      }
-    }
-  }
-  
-  const script = document.createElement('script')
-  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
-  script.id = 'MathJax-script'
-  script.async = true
-  document.head.appendChild(script)
-} else {
-  MathJax.startup.document.state(0)
-  MathJax.texReset()
-  MathJax.typeset()
-}</script><script>(() => {
-  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
-  if ($mermaidWrap.length) {
-    window.runMermaid = () => {
-      window.loadMermaid = true
-      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
-
-      Array.from($mermaidWrap).forEach((item, index) => {
-        const mermaidSrc = item.firstElementChild
-        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
-        const mermaidID = 'mermaid-' + index
-        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
-        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
-          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
-        })
-      })
-    }
-
-    const loadMermaid = () => {
-      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
-    }
-
-    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
-  }
-})()</script><script>function loadValine () {
-  function initValine () {
-    const valine = new Valine(Object.assign({
-      el: '#vcomment',
-      appId: 'WU7g4I4cNK7LYpz3RJVoz1YV-gzGzoHsz',
-      appKey: '4MHXbgYuTwfEzqQofOeNVquO',
-      avatar: 'monsterid',
-      serverURLs: '',
-      emojiMaps: "",
-      path: window.location.pathname,
-      visitor: false
-    }, null))
-  }
-
-  if (typeof Valine === 'function') initValine() 
-  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
-}
-
-if ('Valine' === 'Valine' || !false) {
-  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
-  else setTimeout(loadValine, 0)
-} else {
-  function loadOtherComment () {
-    loadValine()
-  }
-}</script></div><div class="aplayer no-destroy" data-id="5183531430" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="false" muted></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
-POWERMODE.shake = false;
-POWERMODE.mobile = false;
-document.body.addEventListener('input', POWERMODE);
-</script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":190},"mobile":{"show":true},"react":{"opacity":1}});</script></body></html>
+本文对原始作品作了修改，转载请保留原文链接及作者<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者:</span> <span class="post-copyright-info"><a href="https://xiongbinzou.github.io">小邹同学</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接:</span> <span class="post-copyright-info"><a href="https://xiongbinzou.github.io/posts/39175.html">https://xiongbinzou.github.io/posts/39175.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明:</span> <span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://xiongbinzou.github.io" target="_blank">小邹同学</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Django/">Django</a><a class="post-meta__tags" href="/tags/Django-REST-framework/">Django REST framework</a><a class="post-meta__tags" href="/tags/Vue/">Vue</a><a class="post-meta__tags" href="/tags/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/">前后端分离</a></div><div class="post_share"><div class="social-share" data-image="/pics/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload='this.media="all"'><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/pics/reward/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/pics/reward/wechat.jpg" alt="微信"></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/pics/reward/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/pics/reward/alipay.jpg" alt="支付宝"></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/8442.html"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror='onerror=null,src="/img/404.jpg"' alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Django-Vue搭建个人博客(2)：DRF的使用</div></div></a></div><div class="next-post pull-right"><a href="/posts/63190.html"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror='onerror=null,src="/img/404.jpg"' alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Django-Vue搭建个人博客(0)：前言</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/63190.html" title="Django-Vue搭建个人博客(0)：前言"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-02</div><div class="title">Django-Vue搭建个人博客(0)：前言</div></div></a></div><div><a href="/posts/8442.html" title="Django-Vue搭建个人博客(2)：DRF的使用"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-04</div><div class="title">Django-Vue搭建个人博客(2)：DRF的使用</div></div></a></div><div><a href="/posts/16431.html" title="Django-Vue搭建个人博客(3)：后端功能完善"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-05</div><div class="title">Django-Vue搭建个人博客(3)：后端功能完善</div></div></a></div><div><a href="/posts/12498.html" title="Django-Vue搭建个人博客(4)：前端功能完善"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-06</div><div class="title">Django-Vue搭建个人博客(4)：前端功能完善</div></div></a></div></div></div><hr><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i> <span>评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="toc-text">1. 开发环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E5%87%86%E5%A4%87"><span class="toc-text">2. 前端开发准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E5%87%86%E5%A4%87"><span class="toc-text">3. 后端开发准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90"><span class="toc-text">4. 工具推荐</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background-image:url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By 小邹同学</div><div class="framework-info"><span>框架</span> <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题</span> <a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">你好，欢迎来到<a href="https://xiongbinzou.github.io">小邹同学的Secret Base</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i> <span>数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"></div></div><hr><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader={endLoading:()=>{document.body.style.overflow="auto",document.getElementById("loading-box").classList.add("loaded")},initLoading:()=>{document.body.style.overflow="",document.getElementById("loading-box").classList.remove("loaded")}};window.addEventListener("load",preloader.endLoading())</script><div class="js-pjax"><script>if(window.MathJax)MathJax.startup.document.state(0),MathJax.texReset(),MathJax.typeset();else{window.MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],tags:"ams"},chtml:{scale:1.2},options:{renderActions:{findScript:[10,t=>{for(const e of document.querySelectorAll('script[type^="math/tex"]')){const a=!!e.type.match(/; *mode=display/),n=new t.options.MathItem(e.textContent,t.inputJax[0],a),s=document.createTextNode("");e.parentNode.replaceChild(s,e),n.start={node:s,delim:"",n:0},n.end={node:s,delim:"",n:0},t.math.push(n)}},""],insertScript:[200,()=>{document.querySelectorAll("mjx-container:not([display])").forEach((t=>{const e=t.parentNode;"li"===e.nodeName.toLowerCase()?e.parentNode.classList.add("has-jax"):e.classList.add("has-jax")}))},"",!1]}}};const t=document.createElement("script");t.src="https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js",t.id="MathJax-script",t.async=!0,document.head.appendChild(t)}</script><script>(()=>{const e=document.querySelectorAll("#article-container .mermaid-wrap");if(e.length){window.runMermaid=()=>{window.loadMermaid=!0;const t="dark"===document.documentElement.getAttribute("data-theme")?"dark":"default";Array.from(e).forEach(((e,n)=>{const d=e.firstElementChild,r="mermaid-"+n,i="%%{init:{ 'theme':'"+t+"'}}%%\n"+d.textContent;mermaid.mermaidAPI.render(r,i,(e=>{d.insertAdjacentHTML("afterend",e)}))}))};const t=()=>{window.loadMermaid?runMermaid():getScript("https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js").then(runMermaid)};window.pjax?t():document.addEventListener("DOMContentLoaded",t)}})()</script><script>function loadValine(){function n(){new Valine(Object.assign({el:"#vcomment",appId:"WU7g4I4cNK7LYpz3RJVoz1YV-gzGzoHsz",appKey:"4MHXbgYuTwfEzqQofOeNVquO",avatar:"monsterid",serverURLs:"",emojiMaps:"",path:window.location.pathname,visitor:!1},null))}"function"==typeof Valine?n():getScript("https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js").then(n)}{function loadOtherComment(){loadValine()}setTimeout(loadValine,0)}</script></div><div class="aplayer no-destroy" data-id="5183531430" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listfolded="false" data-order="random" data-preload="none" data-autoplay="false" muted></div><script id="canvas_nest" defer color="0,0,255" opacity="0.7" zindex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful=!0,POWERMODE.shake=!1,POWERMODE.mobile=!1,document.body.addEventListener("input",POWERMODE)</script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({pluginRootPath:"live2dw/",pluginJsPath:"lib/",pluginModelPath:"assets/",tagMode:!1,log:!1,model:{jsonPath:"/live2dw/assets/hijiki.model.json"},display:{position:"left",width:150,height:190},mobile:{show:!0},react:{opacity:1}})</script></body></html>
